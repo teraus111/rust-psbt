@@ -1,12 +1,16 @@
----   # rust-psbt CI: If you edit this file please update README.md
+---
+# rust-psbt CI
+#
+# CI job and task structure is optimized for developer debugging. Not runner
+# minutes or parallelism.
+
 on:   # yamllint disable-line rule:truthy
   push:
     branches:
       - master
-      - 'test-ci/**'
   pull_request:
 
-name: Continuous integration
+name: Continuous Integration
 
 jobs:
   Stable:                       # 2 jobs, one per lock file.
@@ -19,8 +23,9 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: rust-bitcoin/rust-bitcoin-maintainer-tools/.github/actions/setup-rbmt@master
+        id: setup
       - name: "Run tests"
-        run: cargo rbmt test stable --lock-file ${{ matrix.dep }}
+        run: cargo +${{ steps.setup.outputs.stable-version }} rbmt test stable --lock-file ${{ matrix.dep }}
 
   Nightly:                      # 2 jobs, one per lock file.
     name: Test - nightly toolchain
@@ -71,8 +76,9 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: rust-bitcoin/rust-bitcoin-maintainer-tools/.github/actions/setup-rbmt@master
+        id: setup
       - name: "Build docs"
-        run: cargo rbmt docs
+        run: cargo +${{ steps.setup.outputs.stable-version }} rbmt docs
 
   Docsrs:
     name: Docs - nightly toolchain
