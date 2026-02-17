@@ -68,6 +68,18 @@ jobs:
       - name: "Run lint"
         run: cargo +${{ steps.setup.outputs.nightly-version }} rbmt lint
 
+  API:
+    name: API check
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v6
+      - uses: rust-bitcoin/rust-bitcoin-maintainer-tools/.github/actions/setup-rbmt@master
+        id: setup
+      - name: "Run API check"
+        run: cargo +${{ steps.setup.outputs.nightly-version }} rbmt api
+
   Docs:
     name: Docs - stable toolchain
     runs-on: ubuntu-latest
