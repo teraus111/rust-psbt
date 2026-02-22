@@ -32,6 +32,7 @@ impl core::marker::Freeze for psbt_v2::raw::Key
 impl core::marker::Send for psbt_v2::raw::Key
 impl core::marker::Sync for psbt_v2::raw::Key
 impl core::marker::Unpin for psbt_v2::raw::Key
+impl core::marker::UnsafeUnpin for psbt_v2::raw::Key
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::raw::Key
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::raw::Key
 impl<T, U> core::convert::Into<U> for psbt_v2::raw::Key where U: core::convert::From<T>
@@ -78,6 +79,7 @@ impl core::marker::Freeze for psbt_v2::raw::Pair
 impl core::marker::Send for psbt_v2::raw::Pair
 impl core::marker::Sync for psbt_v2::raw::Pair
 impl core::marker::Unpin for psbt_v2::raw::Pair
+impl core::marker::UnsafeUnpin for psbt_v2::raw::Pair
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::raw::Pair
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::raw::Pair
 impl<T, U> core::convert::Into<U> for psbt_v2::raw::Pair where U: core::convert::From<T>
@@ -134,6 +136,7 @@ impl<Subtype> core::marker::Freeze for psbt_v2::raw::ProprietaryKey<Subtype> whe
 impl<Subtype> core::marker::Send for psbt_v2::raw::ProprietaryKey<Subtype> where Subtype: core::marker::Send
 impl<Subtype> core::marker::Sync for psbt_v2::raw::ProprietaryKey<Subtype> where Subtype: core::marker::Sync
 impl<Subtype> core::marker::Unpin for psbt_v2::raw::ProprietaryKey<Subtype> where Subtype: core::marker::Unpin
+impl<Subtype> core::marker::UnsafeUnpin for psbt_v2::raw::ProprietaryKey<Subtype> where Subtype: core::marker::UnsafeUnpin
 impl<Subtype> core::panic::unwind_safe::RefUnwindSafe for psbt_v2::raw::ProprietaryKey<Subtype> where Subtype: core::panic::unwind_safe::RefUnwindSafe
 impl<Subtype> core::panic::unwind_safe::UnwindSafe for psbt_v2::raw::ProprietaryKey<Subtype> where Subtype: core::panic::unwind_safe::UnwindSafe
 impl<T, U> core::convert::Into<U> for psbt_v2::raw::ProprietaryKey<Subtype> where U: core::convert::From<T>
@@ -213,6 +216,7 @@ impl core::marker::Freeze for psbt_v2::serialize::Error
 impl core::marker::Send for psbt_v2::serialize::Error
 impl core::marker::Sync for psbt_v2::serialize::Error
 impl core::marker::Unpin for psbt_v2::serialize::Error
+impl core::marker::UnsafeUnpin for psbt_v2::serialize::Error
 impl !core::panic::unwind_safe::RefUnwindSafe for psbt_v2::serialize::Error
 impl !core::panic::unwind_safe::UnwindSafe for psbt_v2::serialize::Error
 impl<T, U> core::convert::Into<U> for psbt_v2::serialize::Error where U: core::convert::From<T>
@@ -268,6 +272,7 @@ impl core::marker::Freeze for psbt_v2::v0::bitcoin::raw::Key
 impl core::marker::Send for psbt_v2::v0::bitcoin::raw::Key
 impl core::marker::Sync for psbt_v2::v0::bitcoin::raw::Key
 impl core::marker::Unpin for psbt_v2::v0::bitcoin::raw::Key
+impl core::marker::UnsafeUnpin for psbt_v2::v0::bitcoin::raw::Key
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v0::bitcoin::raw::Key
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v0::bitcoin::raw::Key
 impl<T, U> core::convert::Into<U> for psbt_v2::v0::bitcoin::raw::Key where U: core::convert::From<T>
@@ -314,6 +319,7 @@ impl core::marker::Freeze for psbt_v2::v0::bitcoin::raw::Pair
 impl core::marker::Send for psbt_v2::v0::bitcoin::raw::Pair
 impl core::marker::Sync for psbt_v2::v0::bitcoin::raw::Pair
 impl core::marker::Unpin for psbt_v2::v0::bitcoin::raw::Pair
+impl core::marker::UnsafeUnpin for psbt_v2::v0::bitcoin::raw::Pair
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v0::bitcoin::raw::Pair
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v0::bitcoin::raw::Pair
 impl<T, U> core::convert::Into<U> for psbt_v2::v0::bitcoin::raw::Pair where U: core::convert::From<T>
@@ -370,6 +376,7 @@ impl<Subtype> core::marker::Freeze for psbt_v2::v0::bitcoin::raw::ProprietaryKey
 impl<Subtype> core::marker::Send for psbt_v2::v0::bitcoin::raw::ProprietaryKey<Subtype> where Subtype: core::marker::Send
 impl<Subtype> core::marker::Sync for psbt_v2::v0::bitcoin::raw::ProprietaryKey<Subtype> where Subtype: core::marker::Sync
 impl<Subtype> core::marker::Unpin for psbt_v2::v0::bitcoin::raw::ProprietaryKey<Subtype> where Subtype: core::marker::Unpin
+impl<Subtype> core::marker::UnsafeUnpin for psbt_v2::v0::bitcoin::raw::ProprietaryKey<Subtype> where Subtype: core::marker::UnsafeUnpin
 impl<Subtype> core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v0::bitcoin::raw::ProprietaryKey<Subtype> where Subtype: core::panic::unwind_safe::RefUnwindSafe
 impl<Subtype> core::panic::unwind_safe::UnwindSafe for psbt_v2::v0::bitcoin::raw::ProprietaryKey<Subtype> where Subtype: core::panic::unwind_safe::UnwindSafe
 impl<T, U> core::convert::Into<U> for psbt_v2::v0::bitcoin::raw::ProprietaryKey<Subtype> where U: core::convert::From<T>
@@ -455,6 +462,7 @@ impl core::marker::Freeze for psbt_v2::v0::bitcoin::Error
 impl core::marker::Send for psbt_v2::v0::bitcoin::Error
 impl core::marker::Sync for psbt_v2::v0::bitcoin::Error
 impl core::marker::Unpin for psbt_v2::v0::bitcoin::Error
+impl core::marker::UnsafeUnpin for psbt_v2::v0::bitcoin::Error
 impl !core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v0::bitcoin::Error
 impl !core::panic::unwind_safe::UnwindSafe for psbt_v2::v0::bitcoin::Error
 impl<T, U> core::convert::Into<U> for psbt_v2::v0::bitcoin::Error where U: core::convert::From<T>
@@ -503,6 +511,7 @@ impl core::marker::Freeze for psbt_v2::v0::bitcoin::ExtractTxError
 impl core::marker::Send for psbt_v2::v0::bitcoin::ExtractTxError
 impl core::marker::Sync for psbt_v2::v0::bitcoin::ExtractTxError
 impl core::marker::Unpin for psbt_v2::v0::bitcoin::ExtractTxError
+impl core::marker::UnsafeUnpin for psbt_v2::v0::bitcoin::ExtractTxError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v0::bitcoin::ExtractTxError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v0::bitcoin::ExtractTxError
 impl<T, U> core::convert::Into<U> for psbt_v2::v0::bitcoin::ExtractTxError where U: core::convert::From<T>
@@ -554,6 +563,7 @@ impl core::marker::Freeze for psbt_v2::v0::bitcoin::GetKeyError
 impl core::marker::Send for psbt_v2::v0::bitcoin::GetKeyError
 impl core::marker::Sync for psbt_v2::v0::bitcoin::GetKeyError
 impl core::marker::Unpin for psbt_v2::v0::bitcoin::GetKeyError
+impl core::marker::UnsafeUnpin for psbt_v2::v0::bitcoin::GetKeyError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v0::bitcoin::GetKeyError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v0::bitcoin::GetKeyError
 impl<T, U> core::convert::Into<U> for psbt_v2::v0::bitcoin::GetKeyError where U: core::convert::From<T>
@@ -609,6 +619,7 @@ impl core::marker::Freeze for psbt_v2::v0::bitcoin::IndexOutOfBoundsError
 impl core::marker::Send for psbt_v2::v0::bitcoin::IndexOutOfBoundsError
 impl core::marker::Sync for psbt_v2::v0::bitcoin::IndexOutOfBoundsError
 impl core::marker::Unpin for psbt_v2::v0::bitcoin::IndexOutOfBoundsError
+impl core::marker::UnsafeUnpin for psbt_v2::v0::bitcoin::IndexOutOfBoundsError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v0::bitcoin::IndexOutOfBoundsError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v0::bitcoin::IndexOutOfBoundsError
 impl<T, U> core::convert::Into<U> for psbt_v2::v0::bitcoin::IndexOutOfBoundsError where U: core::convert::From<T>
@@ -652,6 +663,7 @@ impl core::marker::Freeze for psbt_v2::v0::bitcoin::KeyRequest
 impl core::marker::Send for psbt_v2::v0::bitcoin::KeyRequest
 impl core::marker::Sync for psbt_v2::v0::bitcoin::KeyRequest
 impl core::marker::Unpin for psbt_v2::v0::bitcoin::KeyRequest
+impl core::marker::UnsafeUnpin for psbt_v2::v0::bitcoin::KeyRequest
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v0::bitcoin::KeyRequest
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v0::bitcoin::KeyRequest
 impl<T, U> core::convert::Into<U> for psbt_v2::v0::bitcoin::KeyRequest where U: core::convert::From<T>
@@ -707,6 +719,7 @@ impl core::marker::Freeze for psbt_v2::v0::bitcoin::OutputType
 impl core::marker::Send for psbt_v2::v0::bitcoin::OutputType
 impl core::marker::Sync for psbt_v2::v0::bitcoin::OutputType
 impl core::marker::Unpin for psbt_v2::v0::bitcoin::OutputType
+impl core::marker::UnsafeUnpin for psbt_v2::v0::bitcoin::OutputType
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v0::bitcoin::OutputType
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v0::bitcoin::OutputType
 impl<T, U> core::convert::Into<U> for psbt_v2::v0::bitcoin::OutputType where U: core::convert::From<T>
@@ -748,6 +761,7 @@ impl core::marker::Freeze for psbt_v2::v0::bitcoin::PsbtParseError
 impl core::marker::Send for psbt_v2::v0::bitcoin::PsbtParseError
 impl core::marker::Sync for psbt_v2::v0::bitcoin::PsbtParseError
 impl core::marker::Unpin for psbt_v2::v0::bitcoin::PsbtParseError
+impl core::marker::UnsafeUnpin for psbt_v2::v0::bitcoin::PsbtParseError
 impl !core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v0::bitcoin::PsbtParseError
 impl !core::panic::unwind_safe::UnwindSafe for psbt_v2::v0::bitcoin::PsbtParseError
 impl<T, U> core::convert::Into<U> for psbt_v2::v0::bitcoin::PsbtParseError where U: core::convert::From<T>
@@ -811,6 +825,7 @@ impl core::marker::Freeze for psbt_v2::v0::bitcoin::SignError
 impl core::marker::Send for psbt_v2::v0::bitcoin::SignError
 impl core::marker::Sync for psbt_v2::v0::bitcoin::SignError
 impl core::marker::Unpin for psbt_v2::v0::bitcoin::SignError
+impl core::marker::UnsafeUnpin for psbt_v2::v0::bitcoin::SignError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v0::bitcoin::SignError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v0::bitcoin::SignError
 impl<T, U> core::convert::Into<U> for psbt_v2::v0::bitcoin::SignError where U: core::convert::From<T>
@@ -861,6 +876,7 @@ impl core::marker::Freeze for psbt_v2::v0::bitcoin::SigningAlgorithm
 impl core::marker::Send for psbt_v2::v0::bitcoin::SigningAlgorithm
 impl core::marker::Sync for psbt_v2::v0::bitcoin::SigningAlgorithm
 impl core::marker::Unpin for psbt_v2::v0::bitcoin::SigningAlgorithm
+impl core::marker::UnsafeUnpin for psbt_v2::v0::bitcoin::SigningAlgorithm
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v0::bitcoin::SigningAlgorithm
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v0::bitcoin::SigningAlgorithm
 impl<T, U> core::convert::Into<U> for psbt_v2::v0::bitcoin::SigningAlgorithm where U: core::convert::From<T>
@@ -906,6 +922,7 @@ impl core::marker::Freeze for psbt_v2::v0::bitcoin::SigningKeys
 impl core::marker::Send for psbt_v2::v0::bitcoin::SigningKeys
 impl core::marker::Sync for psbt_v2::v0::bitcoin::SigningKeys
 impl core::marker::Unpin for psbt_v2::v0::bitcoin::SigningKeys
+impl core::marker::UnsafeUnpin for psbt_v2::v0::bitcoin::SigningKeys
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v0::bitcoin::SigningKeys
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v0::bitcoin::SigningKeys
 impl<T, U> core::convert::Into<U> for psbt_v2::v0::bitcoin::SigningKeys where U: core::convert::From<T>
@@ -980,6 +997,7 @@ impl core::marker::Freeze for psbt_v2::v0::Input
 impl core::marker::Send for psbt_v2::v0::Input
 impl core::marker::Sync for psbt_v2::v0::Input
 impl core::marker::Unpin for psbt_v2::v0::Input
+impl core::marker::UnsafeUnpin for psbt_v2::v0::Input
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v0::Input
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v0::Input
 impl<T, U> core::convert::Into<U> for psbt_v2::v0::Input where U: core::convert::From<T>
@@ -1040,6 +1058,7 @@ impl core::marker::Freeze for psbt_v2::v0::Output
 impl core::marker::Send for psbt_v2::v0::Output
 impl core::marker::Sync for psbt_v2::v0::Output
 impl core::marker::Unpin for psbt_v2::v0::Output
+impl core::marker::UnsafeUnpin for psbt_v2::v0::Output
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v0::Output
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v0::Output
 impl<T, U> core::convert::Into<U> for psbt_v2::v0::Output where U: core::convert::From<T>
@@ -1130,6 +1149,7 @@ impl core::marker::Freeze for psbt_v2::v0::bitcoin::Psbt
 impl core::marker::Send for psbt_v2::v0::bitcoin::Psbt
 impl core::marker::Sync for psbt_v2::v0::bitcoin::Psbt
 impl core::marker::Unpin for psbt_v2::v0::bitcoin::Psbt
+impl core::marker::UnsafeUnpin for psbt_v2::v0::bitcoin::Psbt
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v0::bitcoin::Psbt
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v0::bitcoin::Psbt
 impl<T, U> core::convert::Into<U> for psbt_v2::v0::bitcoin::Psbt where U: core::convert::From<T>
@@ -1198,6 +1218,7 @@ impl core::marker::Freeze for psbt_v2::v0::miniscript::Error
 impl core::marker::Send for psbt_v2::v0::miniscript::Error
 impl core::marker::Sync for psbt_v2::v0::miniscript::Error
 impl core::marker::Unpin for psbt_v2::v0::miniscript::Error
+impl core::marker::UnsafeUnpin for psbt_v2::v0::miniscript::Error
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v0::miniscript::Error
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v0::miniscript::Error
 impl<T, U> core::convert::Into<U> for psbt_v2::v0::miniscript::Error where U: core::convert::From<T>
@@ -1257,6 +1278,7 @@ impl core::marker::Freeze for psbt_v2::v0::miniscript::InputError
 impl core::marker::Send for psbt_v2::v0::miniscript::InputError
 impl core::marker::Sync for psbt_v2::v0::miniscript::InputError
 impl core::marker::Unpin for psbt_v2::v0::miniscript::InputError
+impl core::marker::UnsafeUnpin for psbt_v2::v0::miniscript::InputError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v0::miniscript::InputError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v0::miniscript::InputError
 impl<T, U> core::convert::Into<U> for psbt_v2::v0::miniscript::InputError where U: core::convert::From<T>
@@ -1307,6 +1329,7 @@ impl core::marker::Freeze for psbt_v2::v0::miniscript::OutputUpdateError
 impl core::marker::Send for psbt_v2::v0::miniscript::OutputUpdateError
 impl core::marker::Sync for psbt_v2::v0::miniscript::OutputUpdateError
 impl core::marker::Unpin for psbt_v2::v0::miniscript::OutputUpdateError
+impl core::marker::UnsafeUnpin for psbt_v2::v0::miniscript::OutputUpdateError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v0::miniscript::OutputUpdateError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v0::miniscript::OutputUpdateError
 impl<T, U> core::convert::Into<U> for psbt_v2::v0::miniscript::OutputUpdateError where U: core::convert::From<T>
@@ -1360,6 +1383,7 @@ impl core::marker::Freeze for psbt_v2::v0::miniscript::PsbtSighashMsg
 impl core::marker::Send for psbt_v2::v0::miniscript::PsbtSighashMsg
 impl core::marker::Sync for psbt_v2::v0::miniscript::PsbtSighashMsg
 impl core::marker::Unpin for psbt_v2::v0::miniscript::PsbtSighashMsg
+impl core::marker::UnsafeUnpin for psbt_v2::v0::miniscript::PsbtSighashMsg
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v0::miniscript::PsbtSighashMsg
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v0::miniscript::PsbtSighashMsg
 impl<T, U> core::convert::Into<U> for psbt_v2::v0::miniscript::PsbtSighashMsg where U: core::convert::From<T>
@@ -1418,6 +1442,7 @@ impl core::marker::Freeze for psbt_v2::v0::miniscript::SighashError
 impl core::marker::Send for psbt_v2::v0::miniscript::SighashError
 impl core::marker::Sync for psbt_v2::v0::miniscript::SighashError
 impl core::marker::Unpin for psbt_v2::v0::miniscript::SighashError
+impl core::marker::UnsafeUnpin for psbt_v2::v0::miniscript::SighashError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v0::miniscript::SighashError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v0::miniscript::SighashError
 impl<T, U> core::convert::Into<U> for psbt_v2::v0::miniscript::SighashError where U: core::convert::From<T>
@@ -1475,6 +1500,7 @@ impl core::marker::Freeze for psbt_v2::v0::miniscript::UtxoUpdateError
 impl core::marker::Send for psbt_v2::v0::miniscript::UtxoUpdateError
 impl core::marker::Sync for psbt_v2::v0::miniscript::UtxoUpdateError
 impl core::marker::Unpin for psbt_v2::v0::miniscript::UtxoUpdateError
+impl core::marker::UnsafeUnpin for psbt_v2::v0::miniscript::UtxoUpdateError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v0::miniscript::UtxoUpdateError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v0::miniscript::UtxoUpdateError
 impl<T, U> core::convert::Into<U> for psbt_v2::v0::miniscript::UtxoUpdateError where U: core::convert::From<T>
@@ -1526,6 +1552,7 @@ impl<'psbt> core::marker::Freeze for psbt_v2::v0::miniscript::PsbtInputSatisfier
 impl<'psbt> core::marker::Send for psbt_v2::v0::miniscript::PsbtInputSatisfier<'psbt>
 impl<'psbt> core::marker::Sync for psbt_v2::v0::miniscript::PsbtInputSatisfier<'psbt>
 impl<'psbt> core::marker::Unpin for psbt_v2::v0::miniscript::PsbtInputSatisfier<'psbt>
+impl<'psbt> core::marker::UnsafeUnpin for psbt_v2::v0::miniscript::PsbtInputSatisfier<'psbt>
 impl<'psbt> core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v0::miniscript::PsbtInputSatisfier<'psbt>
 impl<'psbt> core::panic::unwind_safe::UnwindSafe for psbt_v2::v0::miniscript::PsbtInputSatisfier<'psbt>
 impl<T, Pk> miniscript::plan::AssetProvider<Pk> for psbt_v2::v0::miniscript::PsbtInputSatisfier<'psbt> where T: miniscript::miniscript::satisfy::Satisfier<Pk>, Pk: miniscript::MiniscriptKey + miniscript::ToPublicKey
@@ -1622,6 +1649,7 @@ impl core::marker::Freeze for psbt_v2::v0::SignerChecksError
 impl core::marker::Send for psbt_v2::v0::SignerChecksError
 impl core::marker::Sync for psbt_v2::v0::SignerChecksError
 impl core::marker::Unpin for psbt_v2::v0::SignerChecksError
+impl core::marker::UnsafeUnpin for psbt_v2::v0::SignerChecksError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v0::SignerChecksError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v0::SignerChecksError
 impl<T, U> core::convert::Into<U> for psbt_v2::v0::SignerChecksError where U: core::convert::From<T>
@@ -1698,6 +1726,7 @@ impl core::marker::Freeze for psbt_v2::v0::Input
 impl core::marker::Send for psbt_v2::v0::Input
 impl core::marker::Sync for psbt_v2::v0::Input
 impl core::marker::Unpin for psbt_v2::v0::Input
+impl core::marker::UnsafeUnpin for psbt_v2::v0::Input
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v0::Input
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v0::Input
 impl<T, U> core::convert::Into<U> for psbt_v2::v0::Input where U: core::convert::From<T>
@@ -1758,6 +1787,7 @@ impl core::marker::Freeze for psbt_v2::v0::Output
 impl core::marker::Send for psbt_v2::v0::Output
 impl core::marker::Sync for psbt_v2::v0::Output
 impl core::marker::Unpin for psbt_v2::v0::Output
+impl core::marker::UnsafeUnpin for psbt_v2::v0::Output
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v0::Output
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v0::Output
 impl<T, U> core::convert::Into<U> for psbt_v2::v0::Output where U: core::convert::From<T>
@@ -1848,6 +1878,7 @@ impl core::marker::Freeze for psbt_v2::v0::bitcoin::Psbt
 impl core::marker::Send for psbt_v2::v0::bitcoin::Psbt
 impl core::marker::Sync for psbt_v2::v0::bitcoin::Psbt
 impl core::marker::Unpin for psbt_v2::v0::bitcoin::Psbt
+impl core::marker::UnsafeUnpin for psbt_v2::v0::bitcoin::Psbt
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v0::bitcoin::Psbt
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v0::bitcoin::Psbt
 impl<T, U> core::convert::Into<U> for psbt_v2::v0::bitcoin::Psbt where U: core::convert::From<T>
@@ -1915,6 +1946,7 @@ impl core::marker::Freeze for psbt_v2::v2::dleq::DleqProof
 impl core::marker::Send for psbt_v2::v2::dleq::DleqProof
 impl core::marker::Sync for psbt_v2::v2::dleq::DleqProof
 impl core::marker::Unpin for psbt_v2::v2::dleq::DleqProof
+impl core::marker::UnsafeUnpin for psbt_v2::v2::dleq::DleqProof
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::dleq::DleqProof
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::dleq::DleqProof
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::dleq::DleqProof where U: core::convert::From<T>
@@ -1961,6 +1993,7 @@ impl core::marker::Freeze for psbt_v2::v2::dleq::InvalidLengthError
 impl core::marker::Send for psbt_v2::v2::dleq::InvalidLengthError
 impl core::marker::Sync for psbt_v2::v2::dleq::InvalidLengthError
 impl core::marker::Unpin for psbt_v2::v2::dleq::InvalidLengthError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::dleq::InvalidLengthError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::dleq::InvalidLengthError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::dleq::InvalidLengthError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::dleq::InvalidLengthError where U: core::convert::From<T>
@@ -2018,6 +2051,7 @@ impl core::marker::Freeze for psbt_v2::v2::global::CombineError
 impl core::marker::Send for psbt_v2::v2::global::CombineError
 impl core::marker::Sync for psbt_v2::v2::global::CombineError
 impl core::marker::Unpin for psbt_v2::v2::global::CombineError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::global::CombineError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::global::CombineError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::global::CombineError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::global::CombineError where U: core::convert::From<T>
@@ -2072,6 +2106,7 @@ impl core::marker::Freeze for psbt_v2::v2::global::DecodeError
 impl core::marker::Send for psbt_v2::v2::global::DecodeError
 impl core::marker::Sync for psbt_v2::v2::global::DecodeError
 impl core::marker::Unpin for psbt_v2::v2::global::DecodeError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::global::DecodeError
 impl !core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::global::DecodeError
 impl !core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::global::DecodeError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::global::DecodeError where U: core::convert::From<T>
@@ -2128,6 +2163,7 @@ impl core::marker::Freeze for psbt_v2::v2::global::InsertPairError
 impl core::marker::Send for psbt_v2::v2::global::InsertPairError
 impl core::marker::Sync for psbt_v2::v2::global::InsertPairError
 impl core::marker::Unpin for psbt_v2::v2::global::InsertPairError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::global::InsertPairError
 impl !core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::global::InsertPairError
 impl !core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::global::InsertPairError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::global::InsertPairError where U: core::convert::From<T>
@@ -2184,6 +2220,7 @@ impl core::marker::Freeze for psbt_v2::v2::Global
 impl core::marker::Send for psbt_v2::v2::Global
 impl core::marker::Sync for psbt_v2::v2::Global
 impl core::marker::Unpin for psbt_v2::v2::Global
+impl core::marker::UnsafeUnpin for psbt_v2::v2::Global
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::Global
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::Global
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::Global where U: core::convert::From<T>
@@ -2237,6 +2274,7 @@ impl core::marker::Freeze for psbt_v2::v2::input::CombineError
 impl core::marker::Send for psbt_v2::v2::input::CombineError
 impl core::marker::Sync for psbt_v2::v2::input::CombineError
 impl core::marker::Unpin for psbt_v2::v2::input::CombineError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::input::CombineError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::input::CombineError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::input::CombineError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::input::CombineError where U: core::convert::From<T>
@@ -2287,6 +2325,7 @@ impl core::marker::Freeze for psbt_v2::v2::input::DecodeError
 impl core::marker::Send for psbt_v2::v2::input::DecodeError
 impl core::marker::Sync for psbt_v2::v2::input::DecodeError
 impl core::marker::Unpin for psbt_v2::v2::input::DecodeError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::input::DecodeError
 impl !core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::input::DecodeError
 impl !core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::input::DecodeError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::input::DecodeError where U: core::convert::From<T>
@@ -2330,6 +2369,7 @@ impl core::marker::Freeze for psbt_v2::v2::input::FinalizeError
 impl core::marker::Send for psbt_v2::v2::input::FinalizeError
 impl core::marker::Sync for psbt_v2::v2::input::FinalizeError
 impl core::marker::Unpin for psbt_v2::v2::input::FinalizeError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::input::FinalizeError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::input::FinalizeError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::input::FinalizeError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::input::FinalizeError where U: core::convert::From<T>
@@ -2384,6 +2424,7 @@ impl core::marker::Freeze for psbt_v2::v2::input::HashType
 impl core::marker::Send for psbt_v2::v2::input::HashType
 impl core::marker::Sync for psbt_v2::v2::input::HashType
 impl core::marker::Unpin for psbt_v2::v2::input::HashType
+impl core::marker::UnsafeUnpin for psbt_v2::v2::input::HashType
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::input::HashType
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::input::HashType
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::input::HashType where U: core::convert::From<T>
@@ -2436,6 +2477,7 @@ impl core::marker::Freeze for psbt_v2::v2::input::InsertPairError
 impl core::marker::Send for psbt_v2::v2::input::InsertPairError
 impl core::marker::Sync for psbt_v2::v2::input::InsertPairError
 impl core::marker::Unpin for psbt_v2::v2::input::InsertPairError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::input::InsertPairError
 impl !core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::input::InsertPairError
 impl !core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::input::InsertPairError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::input::InsertPairError where U: core::convert::From<T>
@@ -2477,6 +2519,7 @@ impl core::marker::Freeze for psbt_v2::v2::input::HashPreimageError
 impl core::marker::Send for psbt_v2::v2::input::HashPreimageError
 impl core::marker::Sync for psbt_v2::v2::input::HashPreimageError
 impl core::marker::Unpin for psbt_v2::v2::input::HashPreimageError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::input::HashPreimageError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::input::HashPreimageError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::input::HashPreimageError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::input::HashPreimageError where U: core::convert::From<T>
@@ -2559,6 +2602,7 @@ impl core::marker::Freeze for psbt_v2::v2::Input
 impl core::marker::Send for psbt_v2::v2::Input
 impl core::marker::Sync for psbt_v2::v2::Input
 impl core::marker::Unpin for psbt_v2::v2::Input
+impl core::marker::UnsafeUnpin for psbt_v2::v2::Input
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::Input
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::Input
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::Input where U: core::convert::From<T>
@@ -2598,6 +2642,7 @@ impl core::marker::Freeze for psbt_v2::v2::InputBuilder
 impl core::marker::Send for psbt_v2::v2::InputBuilder
 impl core::marker::Sync for psbt_v2::v2::InputBuilder
 impl core::marker::Unpin for psbt_v2::v2::InputBuilder
+impl core::marker::UnsafeUnpin for psbt_v2::v2::InputBuilder
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::InputBuilder
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::InputBuilder
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::InputBuilder where U: core::convert::From<T>
@@ -2644,6 +2689,7 @@ impl core::marker::Freeze for psbt_v2::v2::output::CombineError
 impl core::marker::Send for psbt_v2::v2::output::CombineError
 impl core::marker::Sync for psbt_v2::v2::output::CombineError
 impl core::marker::Unpin for psbt_v2::v2::output::CombineError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::output::CombineError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::output::CombineError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::output::CombineError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::output::CombineError where U: core::convert::From<T>
@@ -2694,6 +2740,7 @@ impl core::marker::Freeze for psbt_v2::v2::output::DecodeError
 impl core::marker::Send for psbt_v2::v2::output::DecodeError
 impl core::marker::Sync for psbt_v2::v2::output::DecodeError
 impl core::marker::Unpin for psbt_v2::v2::output::DecodeError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::output::DecodeError
 impl !core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::output::DecodeError
 impl !core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::output::DecodeError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::output::DecodeError where U: core::convert::From<T>
@@ -2736,6 +2783,7 @@ impl core::marker::Freeze for psbt_v2::v2::output::InsertPairError
 impl core::marker::Send for psbt_v2::v2::output::InsertPairError
 impl core::marker::Sync for psbt_v2::v2::output::InsertPairError
 impl core::marker::Unpin for psbt_v2::v2::output::InsertPairError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::output::InsertPairError
 impl !core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::output::InsertPairError
 impl !core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::output::InsertPairError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::output::InsertPairError where U: core::convert::From<T>
@@ -2794,6 +2842,7 @@ impl core::marker::Freeze for psbt_v2::v2::Output
 impl core::marker::Send for psbt_v2::v2::Output
 impl core::marker::Sync for psbt_v2::v2::Output
 impl core::marker::Unpin for psbt_v2::v2::Output
+impl core::marker::UnsafeUnpin for psbt_v2::v2::Output
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::Output
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::Output
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::Output where U: core::convert::From<T>
@@ -2829,6 +2878,7 @@ impl core::marker::Freeze for psbt_v2::v2::OutputBuilder
 impl core::marker::Send for psbt_v2::v2::OutputBuilder
 impl core::marker::Sync for psbt_v2::v2::OutputBuilder
 impl core::marker::Unpin for psbt_v2::v2::OutputBuilder
+impl core::marker::UnsafeUnpin for psbt_v2::v2::OutputBuilder
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::OutputBuilder
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::OutputBuilder
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::OutputBuilder where U: core::convert::From<T>
@@ -2875,6 +2925,7 @@ impl core::marker::Freeze for psbt_v2::v2::CombineError
 impl core::marker::Send for psbt_v2::v2::CombineError
 impl core::marker::Sync for psbt_v2::v2::CombineError
 impl core::marker::Unpin for psbt_v2::v2::CombineError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::CombineError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::CombineError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::CombineError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::CombineError where U: core::convert::From<T>
@@ -2926,6 +2977,7 @@ impl core::marker::Freeze for psbt_v2::v2::DecodeError
 impl core::marker::Send for psbt_v2::v2::DecodeError
 impl core::marker::Sync for psbt_v2::v2::DecodeError
 impl core::marker::Unpin for psbt_v2::v2::DecodeError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::DecodeError
 impl !core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::DecodeError
 impl !core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::DecodeError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::DecodeError where U: core::convert::From<T>
@@ -2971,6 +3023,7 @@ impl core::marker::Freeze for psbt_v2::v2::DeserializeError
 impl core::marker::Send for psbt_v2::v2::DeserializeError
 impl core::marker::Sync for psbt_v2::v2::DeserializeError
 impl core::marker::Unpin for psbt_v2::v2::DeserializeError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::DeserializeError
 impl !core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::DeserializeError
 impl !core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::DeserializeError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::DeserializeError where U: core::convert::From<T>
@@ -3008,6 +3061,7 @@ impl core::marker::Freeze for psbt_v2::v2::ExtractError
 impl core::marker::Send for psbt_v2::v2::ExtractError
 impl core::marker::Sync for psbt_v2::v2::ExtractError
 impl core::marker::Unpin for psbt_v2::v2::ExtractError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::ExtractError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::ExtractError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::ExtractError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::ExtractError where U: core::convert::From<T>
@@ -3053,6 +3107,7 @@ impl core::marker::Freeze for psbt_v2::v2::ExtractTxError
 impl core::marker::Send for psbt_v2::v2::ExtractTxError
 impl core::marker::Sync for psbt_v2::v2::ExtractTxError
 impl core::marker::Unpin for psbt_v2::v2::ExtractTxError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::ExtractTxError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::ExtractTxError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::ExtractTxError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::ExtractTxError where U: core::convert::From<T>
@@ -3107,6 +3162,7 @@ impl core::marker::Freeze for psbt_v2::v2::ExtractTxFeeRateError
 impl core::marker::Send for psbt_v2::v2::ExtractTxFeeRateError
 impl core::marker::Sync for psbt_v2::v2::ExtractTxFeeRateError
 impl core::marker::Unpin for psbt_v2::v2::ExtractTxFeeRateError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::ExtractTxFeeRateError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::ExtractTxFeeRateError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::ExtractTxFeeRateError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::ExtractTxFeeRateError where U: core::convert::From<T>
@@ -3152,6 +3208,7 @@ impl core::marker::Freeze for psbt_v2::v2::FinalizeError
 impl core::marker::Send for psbt_v2::v2::FinalizeError
 impl core::marker::Sync for psbt_v2::v2::FinalizeError
 impl core::marker::Unpin for psbt_v2::v2::FinalizeError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::FinalizeError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::FinalizeError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::FinalizeError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::FinalizeError where U: core::convert::From<T>
@@ -3191,6 +3248,7 @@ impl core::marker::Freeze for psbt_v2::v2::FinalizeInputError
 impl core::marker::Send for psbt_v2::v2::FinalizeInputError
 impl core::marker::Sync for psbt_v2::v2::FinalizeInputError
 impl core::marker::Unpin for psbt_v2::v2::FinalizeInputError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::FinalizeInputError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::FinalizeInputError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::FinalizeInputError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::FinalizeInputError where U: core::convert::From<T>
@@ -3234,6 +3292,7 @@ impl core::marker::Freeze for psbt_v2::v2::GetKeyError
 impl core::marker::Send for psbt_v2::v2::GetKeyError
 impl core::marker::Sync for psbt_v2::v2::GetKeyError
 impl core::marker::Unpin for psbt_v2::v2::GetKeyError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::GetKeyError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::GetKeyError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::GetKeyError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::GetKeyError where U: core::convert::From<T>
@@ -3287,6 +3346,7 @@ impl core::marker::Freeze for psbt_v2::v2::IndexOutOfBoundsError
 impl core::marker::Send for psbt_v2::v2::IndexOutOfBoundsError
 impl core::marker::Sync for psbt_v2::v2::IndexOutOfBoundsError
 impl core::marker::Unpin for psbt_v2::v2::IndexOutOfBoundsError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::IndexOutOfBoundsError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::IndexOutOfBoundsError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::IndexOutOfBoundsError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::IndexOutOfBoundsError where U: core::convert::From<T>
@@ -3362,6 +3422,7 @@ impl core::marker::Freeze for psbt_v2::v2::InputError
 impl core::marker::Send for psbt_v2::v2::InputError
 impl core::marker::Sync for psbt_v2::v2::InputError
 impl core::marker::Unpin for psbt_v2::v2::InputError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::InputError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::InputError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::InputError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::InputError where U: core::convert::From<T>
@@ -3390,6 +3451,7 @@ impl core::marker::Freeze for psbt_v2::v2::InputsOnlyModifiable
 impl core::marker::Send for psbt_v2::v2::InputsOnlyModifiable
 impl core::marker::Sync for psbt_v2::v2::InputsOnlyModifiable
 impl core::marker::Unpin for psbt_v2::v2::InputsOnlyModifiable
+impl core::marker::UnsafeUnpin for psbt_v2::v2::InputsOnlyModifiable
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::InputsOnlyModifiable
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::InputsOnlyModifiable
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::InputsOnlyModifiable where U: core::convert::From<T>
@@ -3429,6 +3491,7 @@ impl core::marker::Freeze for psbt_v2::v2::InterpreterCheckError
 impl core::marker::Send for psbt_v2::v2::InterpreterCheckError
 impl core::marker::Sync for psbt_v2::v2::InterpreterCheckError
 impl core::marker::Unpin for psbt_v2::v2::InterpreterCheckError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::InterpreterCheckError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::InterpreterCheckError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::InterpreterCheckError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::InterpreterCheckError where U: core::convert::From<T>
@@ -3470,6 +3533,7 @@ impl core::marker::Freeze for psbt_v2::v2::InterpreterCheckInputError
 impl core::marker::Send for psbt_v2::v2::InterpreterCheckInputError
 impl core::marker::Sync for psbt_v2::v2::InterpreterCheckInputError
 impl core::marker::Unpin for psbt_v2::v2::InterpreterCheckInputError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::InterpreterCheckInputError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::InterpreterCheckInputError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::InterpreterCheckInputError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::InterpreterCheckInputError where U: core::convert::From<T>
@@ -3507,6 +3571,7 @@ impl core::marker::Freeze for psbt_v2::v2::KeyRequest
 impl core::marker::Send for psbt_v2::v2::KeyRequest
 impl core::marker::Sync for psbt_v2::v2::KeyRequest
 impl core::marker::Unpin for psbt_v2::v2::KeyRequest
+impl core::marker::UnsafeUnpin for psbt_v2::v2::KeyRequest
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::KeyRequest
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::KeyRequest
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::KeyRequest where U: core::convert::From<T>
@@ -3539,6 +3604,7 @@ impl core::marker::Freeze for psbt_v2::v2::Modifiable
 impl core::marker::Send for psbt_v2::v2::Modifiable
 impl core::marker::Sync for psbt_v2::v2::Modifiable
 impl core::marker::Unpin for psbt_v2::v2::Modifiable
+impl core::marker::UnsafeUnpin for psbt_v2::v2::Modifiable
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::Modifiable
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::Modifiable
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::Modifiable where U: core::convert::From<T>
@@ -3578,6 +3644,7 @@ impl core::marker::Freeze for psbt_v2::v2::NotUnsignedError
 impl core::marker::Send for psbt_v2::v2::NotUnsignedError
 impl core::marker::Sync for psbt_v2::v2::NotUnsignedError
 impl core::marker::Unpin for psbt_v2::v2::NotUnsignedError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::NotUnsignedError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::NotUnsignedError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::NotUnsignedError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::NotUnsignedError where U: core::convert::From<T>
@@ -3635,6 +3702,7 @@ impl core::marker::Freeze for psbt_v2::v2::OutputType
 impl core::marker::Send for psbt_v2::v2::OutputType
 impl core::marker::Sync for psbt_v2::v2::OutputType
 impl core::marker::Unpin for psbt_v2::v2::OutputType
+impl core::marker::UnsafeUnpin for psbt_v2::v2::OutputType
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::OutputType
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::OutputType
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::OutputType where U: core::convert::From<T>
@@ -3667,6 +3735,7 @@ impl core::marker::Freeze for psbt_v2::v2::OutputsOnlyModifiable
 impl core::marker::Send for psbt_v2::v2::OutputsOnlyModifiable
 impl core::marker::Sync for psbt_v2::v2::OutputsOnlyModifiable
 impl core::marker::Unpin for psbt_v2::v2::OutputsOnlyModifiable
+impl core::marker::UnsafeUnpin for psbt_v2::v2::OutputsOnlyModifiable
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::OutputsOnlyModifiable
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::OutputsOnlyModifiable
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::OutputsOnlyModifiable where U: core::convert::From<T>
@@ -3700,6 +3769,7 @@ impl core::marker::Freeze for psbt_v2::v2::ParsePsbtError
 impl core::marker::Send for psbt_v2::v2::ParsePsbtError
 impl core::marker::Sync for psbt_v2::v2::ParsePsbtError
 impl core::marker::Unpin for psbt_v2::v2::ParsePsbtError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::ParsePsbtError
 impl !core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::ParsePsbtError
 impl !core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::ParsePsbtError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::ParsePsbtError where U: core::convert::From<T>
@@ -3744,6 +3814,7 @@ impl core::marker::Freeze for psbt_v2::v2::PartialSigsSighashTypeError
 impl core::marker::Send for psbt_v2::v2::PartialSigsSighashTypeError
 impl core::marker::Sync for psbt_v2::v2::PartialSigsSighashTypeError
 impl core::marker::Unpin for psbt_v2::v2::PartialSigsSighashTypeError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::PartialSigsSighashTypeError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::PartialSigsSighashTypeError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::PartialSigsSighashTypeError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::PartialSigsSighashTypeError where U: core::convert::From<T>
@@ -3789,6 +3860,7 @@ impl core::marker::Freeze for psbt_v2::v2::PsbtNotModifiableError
 impl core::marker::Send for psbt_v2::v2::PsbtNotModifiableError
 impl core::marker::Sync for psbt_v2::v2::PsbtNotModifiableError
 impl core::marker::Unpin for psbt_v2::v2::PsbtNotModifiableError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::PsbtNotModifiableError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::PsbtNotModifiableError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::PsbtNotModifiableError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::PsbtNotModifiableError where U: core::convert::From<T>
@@ -3858,6 +3930,7 @@ impl core::marker::Freeze for psbt_v2::v2::SignError
 impl core::marker::Send for psbt_v2::v2::SignError
 impl core::marker::Sync for psbt_v2::v2::SignError
 impl core::marker::Unpin for psbt_v2::v2::SignError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::SignError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::SignError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::SignError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::SignError where U: core::convert::From<T>
@@ -3908,6 +3981,7 @@ impl core::marker::Freeze for psbt_v2::v2::SigningAlgorithm
 impl core::marker::Send for psbt_v2::v2::SigningAlgorithm
 impl core::marker::Sync for psbt_v2::v2::SigningAlgorithm
 impl core::marker::Unpin for psbt_v2::v2::SigningAlgorithm
+impl core::marker::UnsafeUnpin for psbt_v2::v2::SigningAlgorithm
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::SigningAlgorithm
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::SigningAlgorithm
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::SigningAlgorithm where U: core::convert::From<T>
@@ -3974,6 +4048,7 @@ impl<T> core::marker::Freeze for psbt_v2::v2::Constructor<T>
 impl<T> core::marker::Send for psbt_v2::v2::Constructor<T> where T: core::marker::Send
 impl<T> core::marker::Sync for psbt_v2::v2::Constructor<T> where T: core::marker::Sync
 impl<T> core::marker::Unpin for psbt_v2::v2::Constructor<T> where T: core::marker::Unpin
+impl<T> core::marker::UnsafeUnpin for psbt_v2::v2::Constructor<T>
 impl<T> core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::Constructor<T> where T: core::panic::unwind_safe::RefUnwindSafe
 impl<T> core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::Constructor<T> where T: core::panic::unwind_safe::UnwindSafe
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::Constructor<T> where U: core::convert::From<T>
@@ -4033,6 +4108,7 @@ impl core::marker::Freeze for psbt_v2::v2::Creator
 impl core::marker::Send for psbt_v2::v2::Creator
 impl core::marker::Sync for psbt_v2::v2::Creator
 impl core::marker::Unpin for psbt_v2::v2::Creator
+impl core::marker::UnsafeUnpin for psbt_v2::v2::Creator
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::Creator
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::Creator
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::Creator where U: core::convert::From<T>
@@ -4083,6 +4159,7 @@ impl core::marker::Freeze for psbt_v2::v2::DetermineLockTimeError
 impl core::marker::Send for psbt_v2::v2::DetermineLockTimeError
 impl core::marker::Sync for psbt_v2::v2::DetermineLockTimeError
 impl core::marker::Unpin for psbt_v2::v2::DetermineLockTimeError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::DetermineLockTimeError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::DetermineLockTimeError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::DetermineLockTimeError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::DetermineLockTimeError where U: core::convert::From<T>
@@ -4147,6 +4224,7 @@ impl core::marker::Freeze for psbt_v2::v2::dleq::DleqProof
 impl core::marker::Send for psbt_v2::v2::dleq::DleqProof
 impl core::marker::Sync for psbt_v2::v2::dleq::DleqProof
 impl core::marker::Unpin for psbt_v2::v2::dleq::DleqProof
+impl core::marker::UnsafeUnpin for psbt_v2::v2::dleq::DleqProof
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::dleq::DleqProof
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::dleq::DleqProof
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::dleq::DleqProof where U: core::convert::From<T>
@@ -4202,6 +4280,7 @@ impl core::marker::Freeze for psbt_v2::v2::Extractor
 impl core::marker::Send for psbt_v2::v2::Extractor
 impl core::marker::Sync for psbt_v2::v2::Extractor
 impl core::marker::Unpin for psbt_v2::v2::Extractor
+impl core::marker::UnsafeUnpin for psbt_v2::v2::Extractor
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::Extractor
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::Extractor
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::Extractor where U: core::convert::From<T>
@@ -4252,6 +4331,7 @@ impl core::marker::Freeze for psbt_v2::v2::Finalizer
 impl core::marker::Send for psbt_v2::v2::Finalizer
 impl core::marker::Sync for psbt_v2::v2::Finalizer
 impl core::marker::Unpin for psbt_v2::v2::Finalizer
+impl core::marker::UnsafeUnpin for psbt_v2::v2::Finalizer
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::Finalizer
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::Finalizer
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::Finalizer where U: core::convert::From<T>
@@ -4313,6 +4393,7 @@ impl core::marker::Freeze for psbt_v2::v2::Global
 impl core::marker::Send for psbt_v2::v2::Global
 impl core::marker::Sync for psbt_v2::v2::Global
 impl core::marker::Unpin for psbt_v2::v2::Global
+impl core::marker::UnsafeUnpin for psbt_v2::v2::Global
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::Global
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::Global
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::Global where U: core::convert::From<T>
@@ -4394,6 +4475,7 @@ impl core::marker::Freeze for psbt_v2::v2::Input
 impl core::marker::Send for psbt_v2::v2::Input
 impl core::marker::Sync for psbt_v2::v2::Input
 impl core::marker::Unpin for psbt_v2::v2::Input
+impl core::marker::UnsafeUnpin for psbt_v2::v2::Input
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::Input
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::Input
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::Input where U: core::convert::From<T>
@@ -4433,6 +4515,7 @@ impl core::marker::Freeze for psbt_v2::v2::InputBuilder
 impl core::marker::Send for psbt_v2::v2::InputBuilder
 impl core::marker::Sync for psbt_v2::v2::InputBuilder
 impl core::marker::Unpin for psbt_v2::v2::InputBuilder
+impl core::marker::UnsafeUnpin for psbt_v2::v2::InputBuilder
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::InputBuilder
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::InputBuilder
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::InputBuilder where U: core::convert::From<T>
@@ -4471,6 +4554,7 @@ impl core::marker::Freeze for psbt_v2::v2::InputsNotModifiableError
 impl core::marker::Send for psbt_v2::v2::InputsNotModifiableError
 impl core::marker::Sync for psbt_v2::v2::InputsNotModifiableError
 impl core::marker::Unpin for psbt_v2::v2::InputsNotModifiableError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::InputsNotModifiableError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::InputsNotModifiableError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::InputsNotModifiableError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::InputsNotModifiableError where U: core::convert::From<T>
@@ -4518,6 +4602,7 @@ impl core::marker::Freeze for psbt_v2::v2::dleq::InvalidLengthError
 impl core::marker::Send for psbt_v2::v2::dleq::InvalidLengthError
 impl core::marker::Sync for psbt_v2::v2::dleq::InvalidLengthError
 impl core::marker::Unpin for psbt_v2::v2::dleq::InvalidLengthError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::dleq::InvalidLengthError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::dleq::InvalidLengthError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::dleq::InvalidLengthError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::dleq::InvalidLengthError where U: core::convert::From<T>
@@ -4582,6 +4667,7 @@ impl core::marker::Freeze for psbt_v2::v2::Output
 impl core::marker::Send for psbt_v2::v2::Output
 impl core::marker::Sync for psbt_v2::v2::Output
 impl core::marker::Unpin for psbt_v2::v2::Output
+impl core::marker::UnsafeUnpin for psbt_v2::v2::Output
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::Output
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::Output
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::Output where U: core::convert::From<T>
@@ -4617,6 +4703,7 @@ impl core::marker::Freeze for psbt_v2::v2::OutputBuilder
 impl core::marker::Send for psbt_v2::v2::OutputBuilder
 impl core::marker::Sync for psbt_v2::v2::OutputBuilder
 impl core::marker::Unpin for psbt_v2::v2::OutputBuilder
+impl core::marker::UnsafeUnpin for psbt_v2::v2::OutputBuilder
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::OutputBuilder
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::OutputBuilder
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::OutputBuilder where U: core::convert::From<T>
@@ -4656,6 +4743,7 @@ impl core::marker::Freeze for psbt_v2::v2::OutputsNotModifiableError
 impl core::marker::Send for psbt_v2::v2::OutputsNotModifiableError
 impl core::marker::Sync for psbt_v2::v2::OutputsNotModifiableError
 impl core::marker::Unpin for psbt_v2::v2::OutputsNotModifiableError
+impl core::marker::UnsafeUnpin for psbt_v2::v2::OutputsNotModifiableError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::OutputsNotModifiableError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::OutputsNotModifiableError
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::OutputsNotModifiableError where U: core::convert::From<T>
@@ -4726,6 +4814,7 @@ impl core::marker::Freeze for psbt_v2::v2::Psbt
 impl core::marker::Send for psbt_v2::v2::Psbt
 impl core::marker::Sync for psbt_v2::v2::Psbt
 impl core::marker::Unpin for psbt_v2::v2::Psbt
+impl core::marker::UnsafeUnpin for psbt_v2::v2::Psbt
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::Psbt
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::Psbt
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::Psbt where U: core::convert::From<T>
@@ -4781,6 +4870,7 @@ impl core::marker::Freeze for psbt_v2::v2::Signer
 impl core::marker::Send for psbt_v2::v2::Signer
 impl core::marker::Sync for psbt_v2::v2::Signer
 impl core::marker::Unpin for psbt_v2::v2::Signer
+impl core::marker::UnsafeUnpin for psbt_v2::v2::Signer
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::Signer
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::Signer
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::Signer where U: core::convert::From<T>
@@ -4835,6 +4925,7 @@ impl core::marker::Freeze for psbt_v2::v2::Updater
 impl core::marker::Send for psbt_v2::v2::Updater
 impl core::marker::Sync for psbt_v2::v2::Updater
 impl core::marker::Unpin for psbt_v2::v2::Updater
+impl core::marker::UnsafeUnpin for psbt_v2::v2::Updater
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::v2::Updater
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::v2::Updater
 impl<T, U> core::convert::Into<U> for psbt_v2::v2::Updater where U: core::convert::From<T>
@@ -4912,6 +5003,7 @@ impl core::marker::Freeze for psbt_v2::FeeError
 impl core::marker::Send for psbt_v2::FeeError
 impl core::marker::Sync for psbt_v2::FeeError
 impl core::marker::Unpin for psbt_v2::FeeError
+impl core::marker::UnsafeUnpin for psbt_v2::FeeError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::FeeError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::FeeError
 impl<T, U> core::convert::Into<U> for psbt_v2::FeeError where U: core::convert::From<T>
@@ -4965,6 +5057,7 @@ impl core::marker::Freeze for psbt_v2::FundingUtxoError
 impl core::marker::Send for psbt_v2::FundingUtxoError
 impl core::marker::Sync for psbt_v2::FundingUtxoError
 impl core::marker::Unpin for psbt_v2::FundingUtxoError
+impl core::marker::UnsafeUnpin for psbt_v2::FundingUtxoError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::FundingUtxoError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::FundingUtxoError
 impl<T, U> core::convert::Into<U> for psbt_v2::FundingUtxoError where U: core::convert::From<T>
@@ -5014,6 +5107,7 @@ impl core::marker::Freeze for psbt_v2::InvalidSighashTypeError
 impl core::marker::Send for psbt_v2::InvalidSighashTypeError
 impl core::marker::Sync for psbt_v2::InvalidSighashTypeError
 impl core::marker::Unpin for psbt_v2::InvalidSighashTypeError
+impl core::marker::UnsafeUnpin for psbt_v2::InvalidSighashTypeError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::InvalidSighashTypeError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::InvalidSighashTypeError
 impl<T, U> core::convert::Into<U> for psbt_v2::InvalidSighashTypeError where U: core::convert::From<T>
@@ -5061,6 +5155,7 @@ impl core::marker::Freeze for psbt_v2::InconsistentKeySourcesError
 impl core::marker::Send for psbt_v2::InconsistentKeySourcesError
 impl core::marker::Sync for psbt_v2::InconsistentKeySourcesError
 impl core::marker::Unpin for psbt_v2::InconsistentKeySourcesError
+impl core::marker::UnsafeUnpin for psbt_v2::InconsistentKeySourcesError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::InconsistentKeySourcesError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::InconsistentKeySourcesError
 impl<T, U> core::convert::Into<U> for psbt_v2::InconsistentKeySourcesError where U: core::convert::From<T>
@@ -5107,6 +5202,7 @@ impl core::marker::Freeze for psbt_v2::ParseSighashTypeError
 impl core::marker::Send for psbt_v2::ParseSighashTypeError
 impl core::marker::Sync for psbt_v2::ParseSighashTypeError
 impl core::marker::Unpin for psbt_v2::ParseSighashTypeError
+impl core::marker::UnsafeUnpin for psbt_v2::ParseSighashTypeError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::ParseSighashTypeError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::ParseSighashTypeError
 impl<T, U> core::convert::Into<U> for psbt_v2::ParseSighashTypeError where U: core::convert::From<T>
@@ -5173,6 +5269,7 @@ impl core::marker::Freeze for psbt_v2::PsbtSighashType
 impl core::marker::Send for psbt_v2::PsbtSighashType
 impl core::marker::Sync for psbt_v2::PsbtSighashType
 impl core::marker::Unpin for psbt_v2::PsbtSighashType
+impl core::marker::UnsafeUnpin for psbt_v2::PsbtSighashType
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::PsbtSighashType
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::PsbtSighashType
 impl<T, U> core::convert::Into<U> for psbt_v2::PsbtSighashType where U: core::convert::From<T>
@@ -5221,6 +5318,7 @@ impl core::marker::Freeze for psbt_v2::UnsupportedVersionError
 impl core::marker::Send for psbt_v2::UnsupportedVersionError
 impl core::marker::Sync for psbt_v2::UnsupportedVersionError
 impl core::marker::Unpin for psbt_v2::UnsupportedVersionError
+impl core::marker::UnsafeUnpin for psbt_v2::UnsupportedVersionError
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::UnsupportedVersionError
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::UnsupportedVersionError
 impl<T, U> core::convert::Into<U> for psbt_v2::UnsupportedVersionError where U: core::convert::From<T>
@@ -5283,6 +5381,7 @@ impl core::marker::Freeze for psbt_v2::Version
 impl core::marker::Send for psbt_v2::Version
 impl core::marker::Sync for psbt_v2::Version
 impl core::marker::Unpin for psbt_v2::Version
+impl core::marker::UnsafeUnpin for psbt_v2::Version
 impl core::panic::unwind_safe::RefUnwindSafe for psbt_v2::Version
 impl core::panic::unwind_safe::UnwindSafe for psbt_v2::Version
 impl<T, U> core::convert::Into<U> for psbt_v2::Version where U: core::convert::From<T>
