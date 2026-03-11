@@ -94,10 +94,10 @@ fn main() -> anyhow::Result<()> {
     let fake_fp: [u8; 4] = [0; 4];
     psbt.inputs[0]
         .bip32_derivation
-        .insert(alice.0.pk, (Fingerprint::from(fake_fp), DerivationPath::from_str("m")?));
+        .insert(alice.0.public_key(), (Fingerprint::from(fake_fp), DerivationPath::from_str("m")?));
     psbt.inputs[1]
         .bip32_derivation
-        .insert(bob.0.pk, (Fingerprint::from(fake_fp), DerivationPath::from_str("m")?));
+        .insert(bob.0.public_key(), (Fingerprint::from(fake_fp), DerivationPath::from_str("m")?));
 
     // Since we are spending 2 p2wpkh inputs there are no other updates needed.
 

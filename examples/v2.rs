@@ -176,7 +176,7 @@ impl Alice {
     /// Provides the actual UTXO that Alice is contributing, this would usually come from the chain.
     fn input_utxo(&self) -> anyhow::Result<TxOut> { self.0.input_utxo(Self::PATH) }
 
-    fn bip32_derivation(&self) -> anyhow::Result<(secp256k1::PublicKey, KeySource)> {
+    fn bip32_derivation(&self) -> anyhow::Result<(PublicKey, KeySource)> {
         self.0.bip32_derivation(Self::PATH)
     }
 }
@@ -229,7 +229,7 @@ impl Bob {
     /// Provides the actual UTXO that Alice is contributing, this would usually come from the chain.
     fn input_utxo(&self) -> anyhow::Result<TxOut> { self.0.input_utxo(Self::PATH) }
 
-    fn bip32_derivation(&self) -> anyhow::Result<(secp256k1::PublicKey, KeySource)> {
+    fn bip32_derivation(&self) -> anyhow::Result<(PublicKey, KeySource)> {
         self.0.bip32_derivation(Self::PATH)
     }
 }
@@ -266,15 +266,12 @@ impl Entity {
     }
 
     /// Returns the BOP-32 stuff needed to sign an ECDSA input using the [`v2::Psbt`] BIP-32 signing API.
-    fn bip32_derivation(
-        &self,
-        derivation_path: &str,
-    ) -> anyhow::Result<(secp256k1::PublicKey, KeySource)> {
+    fn bip32_derivation(&self, derivation_path: &str) -> anyhow::Result<(PublicKey, KeySource)> {
         let path = DerivationPath::from_str(derivation_path)?;
         let xpriv = self.master.derive_priv(&self.secp, &path).expect("failed to derive xpriv");
         let fingerprint = xpriv.fingerprint(&self.secp);
         let sk = xpriv.to_priv();
-        Ok((sk.public_key(&self.secp).inner, (fingerprint, path)))
+        Ok((sk.public_key(&self.secp), (fingerprint, path)))
     }
 
     /// Signs any ECDSA inputs for which we have keys.

@@ -30,7 +30,7 @@ impl<Pk: MiniscriptKey + ToPublicKey> Satisfier<Pk> for InputSatisfier<'_> {
             .bip32_derivations
             .iter()
             .find(|&(pubkey, _)| pubkey.to_pubkeyhash(SigType::Ecdsa) == *pkh)
-            .map(|(pubkey, _)| bitcoin::PublicKey::new(*pubkey))
+            .map(|(pubkey, _)| *pubkey)
     }
 
     fn lookup_tap_control_block_map(

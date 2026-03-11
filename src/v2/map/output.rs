@@ -5,9 +5,9 @@ use core::fmt;
 
 use bitcoin::bip32::KeySource;
 use bitcoin::io::BufRead;
-use bitcoin::key::XOnlyPublicKey;
+use bitcoin::key::{PublicKey, XOnlyPublicKey};
 use bitcoin::taproot::{TapLeafHash, TapTree};
-use bitcoin::{secp256k1, Amount, ScriptBuf, TxOut};
+use bitcoin::{Amount, ScriptBuf, TxOut};
 
 use crate::consts::{
     PSBT_OUT_AMOUNT, PSBT_OUT_BIP32_DERIVATION, PSBT_OUT_PROPRIETARY, PSBT_OUT_REDEEM_SCRIPT,
@@ -40,7 +40,7 @@ pub struct Output {
     /// A map from public keys needed to spend this output to their
     /// corresponding master key fingerprints and derivation paths.
     #[cfg_attr(feature = "serde", serde(with = "crate::serde_utils::btreemap_as_seq"))]
-    pub bip32_derivations: BTreeMap<secp256k1::PublicKey, KeySource>,
+    pub bip32_derivations: BTreeMap<PublicKey, KeySource>,
     /// The internal pubkey.
     pub tap_internal_key: Option<XOnlyPublicKey>,
     /// Taproot Output tree.
@@ -166,7 +166,7 @@ impl Output {
             }
             PSBT_OUT_BIP32_DERIVATION => {
                 v2_impl_psbt_insert_pair! {
-                    self.bip32_derivations <= <raw_key: secp256k1::PublicKey>|<raw_value: KeySource>
+                    self.bip32_derivations <= <raw_key: PublicKey>|<raw_value: KeySource>
                 }
             }
             PSBT_OUT_PROPRIETARY => {
