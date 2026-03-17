@@ -7,6 +7,7 @@ _default:
 # Install rbmt (Rust Bitcoin Maintainer Tools).
 @_install-rbmt:
   cargo install --quiet --git https://github.com/rust-bitcoin/rust-bitcoin-maintainer-tools.git --rev $(cat {{justfile_directory()}}/rbmt-version) cargo-rbmt
+  RBMT_LOG_LEVEL=quiet cargo rbmt toolchains > /dev/null
 
 # Cargo check everything.
 check:
@@ -40,26 +41,24 @@ docsrs *flags:
 # Update the recent and minimal lock files using rbmt.
 [group('tools')]
 @update-lock-files: _install-rbmt
-  rustup run {{NIGHTLY_VERSION}} cargo rbmt lock
+  cargo rbmt lock
 
 # Ensure the exposed API files in api/ are up-to-date.
 [group('tools')]
 check-api: _install-rbmt
-  cargo +{{NIGHTLY_VERSION}} rbmt api
-
-# Run CI tasks with rbmt.
-[group('ci')]
-@ci task toolchain="stable" lock="recent": _install-rbmt
-  RBMT_LOG_LEVEL=quiet rustup run {{toolchain}} cargo rbmt --lock-file {{lock}} {{task}}
+  cargo rbmt api
 
 # Test crate.
 [group('ci')]
-ci-test: (ci "test stable")
+ci-test toolchain="stable" lock="recent": _install-rbmt
+  cargo rbmt --lock-file {{lock}} test --toolchain {{toolchain}}
 
 # Lint crate.
 [group('ci')]
-ci-lint: (ci "lint" NIGHTLY_VERSION)
+ci-lint: _install-rbmt
+  cargo rbmt lint
 
 # Bitcoin core integration tests.
 [group('ci')]
-ci-integration: (ci "integration")
+ci-integration: _install-rbmt
+  cargo rbmt integration

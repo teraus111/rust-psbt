@@ -14,9 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: rust-bitcoin/rust-bitcoin-maintainer-tools/.github/actions/update-nightly@320a06a6647c90ac97452b20fad5b689905a9791
+      - uses: rust-bitcoin/rust-bitcoin-maintainer-tools/.github/actions/update-nightly@18e7f1788abfc14f5fb76204a3deab43b03ba39c
         with:
           token: ${{ secrets.RBMT_PRS }}
-      - uses: rust-bitcoin/rust-bitcoin-maintainer-tools/.github/actions/update-stable@320a06a6647c90ac97452b20fad5b689905a9791
+      - uses: rust-bitcoin/rust-bitcoin-maintainer-tools/.github/actions/update-stable@18e7f1788abfc14f5fb76204a3deab43b03ba39c
         with:
           token: ${{ secrets.RBMT_PRS }}
