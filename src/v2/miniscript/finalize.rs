@@ -126,8 +126,6 @@ impl Finalizer {
         };
 
         let witness = Witness::from_slice(&witness);
-        println!("{:#?}", script_sig);
-        println!("{:#?}", witness);
         Ok((script_sig, witness))
     }
 
