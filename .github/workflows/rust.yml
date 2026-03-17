@@ -26,60 +26,14 @@ jobs:
       - name: "Run tests"
         run: cargo rbmt --lock-file ${{ matrix.dep }} test --toolchain ${{ matrix.toolchain }}
 
-  Lint:
+  Check:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
+      matrix:
+        command: [lint, api, docs, docsrs, integration, "fmt --check"]
     steps:
       - uses: actions/checkout@v6
       - uses: rust-bitcoin/rust-bitcoin-maintainer-tools/.github/actions/setup-rbmt@18e7f1788abfc14f5fb76204a3deab43b03ba39c
-      - name: "Run lint"
-        run: cargo rbmt lint
-
-  API:
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-    steps:
-      - uses: actions/checkout@v6
-      - uses: rust-bitcoin/rust-bitcoin-maintainer-tools/.github/actions/setup-rbmt@18e7f1788abfc14f5fb76204a3deab43b03ba39c
-      - name: "Run API check"
-        run: cargo rbmt api
-
-  Docs:
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-    steps:
-      - uses: actions/checkout@v6
-      - uses: rust-bitcoin/rust-bitcoin-maintainer-tools/.github/actions/setup-rbmt@18e7f1788abfc14f5fb76204a3deab43b03ba39c
-      - name: "Build docs"
-        run: cargo rbmt docs
-
-  Docsrs:
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-    steps:
-      - uses: actions/checkout@v6
-      - uses: rust-bitcoin/rust-bitcoin-maintainer-tools/.github/actions/setup-rbmt@18e7f1788abfc14f5fb76204a3deab43b03ba39c
-      - name: "Build docs.rs docs"
-        run: cargo rbmt docsrs
-
-  Format:
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-    steps:
-      - uses: actions/checkout@v6
-      - uses: rust-bitcoin/rust-bitcoin-maintainer-tools/.github/actions/setup-rbmt@18e7f1788abfc14f5fb76204a3deab43b03ba39c
-      - name: "Check formatting"
-        run: cargo rbmt fmt --check
-
-  Integration:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v6
-      - uses: rust-bitcoin/rust-bitcoin-maintainer-tools/.github/actions/setup-rbmt@18e7f1788abfc14f5fb76204a3deab43b03ba39c
-      - name: "Run integration tests"
-        run: cargo rbmt integration
+      - name: "Run ${{ matrix.command }}"
+        run: cargo rbmt ${{ matrix.command }}
