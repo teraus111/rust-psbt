@@ -13,114 +13,27 @@ on:   # yamllint disable-line rule:truthy
 name: Continuous Integration
 
 jobs:
-  Stable:                       # 2 jobs, one per lock file.
-    name: Test - stable toolchain
+  Test:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
+        toolchain: [stable, nightly, msrv]
         dep: [minimal, recent]
     steps:
       - uses: actions/checkout@v6
-      - uses: rust-bitcoin/rust-bitcoin-maintainer-tools/.github/actions/setup-rbmt@master
-        id: setup
+      - uses: rust-bitcoin/rust-bitcoin-maintainer-tools/.github/actions/setup-rbmt@18e7f1788abfc14f5fb76204a3deab43b03ba39c
       - name: "Run tests"
-        run: cargo +${{ steps.setup.outputs.stable-version }} rbmt test stable --lock-file ${{ matrix.dep }}
+        run: cargo rbmt --lock-file ${{ matrix.dep }} test --toolchain ${{ matrix.toolchain }}
 
-  Nightly:                      # 2 jobs, one per lock file.
-    name: Test - nightly toolchain
+  Check:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        dep: [minimal, recent]
+        command: [lint, api, docs, docsrs, integration, "fmt --check"]
     steps:
       - uses: actions/checkout@v6
-      - uses: rust-bitcoin/rust-bitcoin-maintainer-tools/.github/actions/setup-rbmt@master
-        id: setup
-      - name: "Run tests"
-        run: cargo +${{ steps.setup.outputs.nightly-version }} rbmt test nightly --lock-file ${{ matrix.dep }}
-
-  MSRV:                         # 2 jobs, one per lock file.
-    name: Test - MSRV toolchain
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        dep: [minimal, recent]
-    steps:
-      - uses: actions/checkout@v6
-      - uses: rust-bitcoin/rust-bitcoin-maintainer-tools/.github/actions/setup-rbmt@master
-        with:
-          toolchains: "1.74.0"
-      - name: "Run tests"
-        run: cargo +1.74.0 rbmt test msrv --lock-file ${{ matrix.dep }}
-
-  Lint:
-    name: Lint - nightly toolchain
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-    steps:
-      - uses: actions/checkout@v6
-      - uses: rust-bitcoin/rust-bitcoin-maintainer-tools/.github/actions/setup-rbmt@master
-        id: setup
-      - name: "Run lint"
-        run: cargo +${{ steps.setup.outputs.nightly-version }} rbmt lint
-
-  API:
-    name: API check
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-    steps:
-      - uses: actions/checkout@v6
-      - uses: rust-bitcoin/rust-bitcoin-maintainer-tools/.github/actions/setup-rbmt@master
-        id: setup
-      - name: "Run API check"
-        run: cargo +${{ steps.setup.outputs.nightly-version }} rbmt api
-
-  Docs:
-    name: Docs - stable toolchain
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-    steps:
-      - uses: actions/checkout@v6
-      - uses: rust-bitcoin/rust-bitcoin-maintainer-tools/.github/actions/setup-rbmt@master
-        id: setup
-      - name: "Build docs"
-        run: cargo +${{ steps.setup.outputs.stable-version }} rbmt docs
-
-  Docsrs:
-    name: Docs - nightly toolchain
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-    steps:
-      - uses: actions/checkout@v6
-      - uses: rust-bitcoin/rust-bitcoin-maintainer-tools/.github/actions/setup-rbmt@master
-        id: setup
-      - name: "Build docs.rs docs"
-        run: cargo +${{ steps.setup.outputs.nightly-version }} rbmt docsrs
-
-  Format:                       #  1 job, run cargo fmt directly.
-    name: Format - nightly toolchain
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-    steps:
-      - uses: actions/checkout@v6
-      - uses: rust-bitcoin/rust-bitcoin-maintainer-tools/.github/actions/setup-rbmt@master
-        id: setup
-      - name: "Check formatting"
-        run: cargo +${{ steps.setup.outputs.nightly-version }} fmt --all -- --check
-
-  Integration:                  # 1 job, run bitcoin core integration tests using rbmt.
-    name: Integration - against bitcoind
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v6
-      - uses: rust-bitcoin/rust-bitcoin-maintainer-tools/.github/actions/setup-rbmt@master
-      - name: "Run integration tests"
-        run: cargo rbmt integration
+      - uses: rust-bitcoin/rust-bitcoin-maintainer-tools/.github/actions/setup-rbmt@18e7f1788abfc14f5fb76204a3deab43b03ba39c
+      - name: "Run ${{ matrix.command }}"
+        run: cargo rbmt ${{ matrix.command }}
