@@ -128,6 +128,11 @@ impl Output {
         }
 
         #[cfg(feature = "silent-payments")]
+        if rv.script_pubkey == ScriptBuf::default() && rv.sp_v0_info.is_none() {
+            return Err(DecodeError::MissingScriptPubkey);
+        }
+
+        #[cfg(feature = "silent-payments")]
         if rv.sp_v0_label.is_some() && rv.sp_v0_info.is_none() {
             return Err(DecodeError::LabelWithoutInfo);
         }
