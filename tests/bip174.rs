@@ -14,7 +14,7 @@ use psbt_v2::bitcoin::blockdata::{script, transaction};
 use psbt_v2::bitcoin::consensus::encode::{deserialize, serialize_hex};
 use psbt_v2::bitcoin::hex::FromHex;
 use psbt_v2::bitcoin::script::PushBytes;
-use psbt_v2::bitcoin::secp256k1::{self, Secp256k1};
+use psbt_v2::bitcoin::secp256k1::Secp256k1;
 use psbt_v2::bitcoin::{
     absolute, Amount, Denomination, Network, OutPoint, PrivateKey, PublicKey, ScriptBuf, Sequence,
     Transaction, TxIn, TxOut, Witness,
@@ -278,7 +278,7 @@ fn bip32_derivation(
     fingerprint: Fingerprint,
     pk_path: &[(&str, &str)],
     indecies: Vec<usize>,
-) -> BTreeMap<secp256k1::PublicKey, KeySource> {
+) -> BTreeMap<PublicKey, KeySource> {
     let mut tree = BTreeMap::new();
     for i in indecies {
         let pk = pk_path[i].0;
@@ -287,7 +287,7 @@ fn bip32_derivation(
         let pk = PublicKey::from_str(pk).unwrap();
         let path = path.into_derivation_path().unwrap();
 
-        tree.insert(pk.inner, (fingerprint, path));
+        tree.insert(pk, (fingerprint, path));
     }
     tree
 }

@@ -144,7 +144,7 @@ impl Finalizer {
             // Use BIP32 Derviation to get set of all possible keys.
             let public_keys = psbt_input.bip32_derivations.keys();
             for key in public_keys {
-                let bitcoin_key = bitcoin::PublicKey::new(*key);
+                let bitcoin_key = *key;
                 let hash = bitcoin_key.pubkey_hash().to_raw_hash();
                 map.insert(hash, bitcoin_key);
             }

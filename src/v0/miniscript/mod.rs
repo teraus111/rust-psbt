@@ -275,7 +275,7 @@ impl<'psbt, Pk: MiniscriptKey + ToPublicKey> Satisfier<Pk> for PsbtInputSatisfie
             .bip32_derivation
             .iter()
             .find(|&(pubkey, _)| pubkey.to_pubkeyhash(SigType::Ecdsa) == *pkh)
-            .map(|(pubkey, _)| bitcoin::PublicKey::new(*pubkey))
+            .map(|(pubkey, _)| *pubkey)
     }
 
     fn lookup_tap_control_block_map(
@@ -970,7 +970,7 @@ impl PsbtOutputExt for Output {
 // Traverse the pkh lookup while maintaining a reverse map for storing the map
 // hash160 -> (XonlyPublicKey)/PublicKey
 struct KeySourceLookUp(
-    pub BTreeMap<secp256k1::PublicKey, bip32::KeySource>,
+    pub BTreeMap<bitcoin::PublicKey, bip32::KeySource>,
     pub secp256k1::Secp256k1<VerifyOnly>,
 );
 
@@ -983,7 +983,7 @@ impl Translator<DefiniteDescriptorKey, bitcoin::PublicKey, descriptor::Conversio
     ) -> Result<bitcoin::PublicKey, descriptor::ConversionError> {
         let derived = xpk.derive_public_key(&self.1)?;
         self.0.insert(
-            derived.to_public_key().inner,
+            derived.to_public_key(),
             (
                 xpk.master_fingerprint(),
                 xpk.full_derivation_path()
@@ -1001,7 +1001,7 @@ trait PsbtFields {
     // Common fields are returned as a mutable ref of the same type
     fn redeem_script(&mut self) -> &mut Option<ScriptBuf>;
     fn witness_script(&mut self) -> &mut Option<ScriptBuf>;
-    fn bip32_derivation(&mut self) -> &mut BTreeMap<secp256k1::PublicKey, bip32::KeySource>;
+    fn bip32_derivation(&mut self) -> &mut BTreeMap<bitcoin::PublicKey, bip32::KeySource>;
     fn tap_internal_key(&mut self) -> &mut Option<bitcoin::key::XOnlyPublicKey>;
     fn tap_key_origins(
         &mut self,
@@ -1024,7 +1024,7 @@ trait PsbtFields {
 impl PsbtFields for Input {
     fn redeem_script(&mut self) -> &mut Option<ScriptBuf> { &mut self.redeem_script }
     fn witness_script(&mut self) -> &mut Option<ScriptBuf> { &mut self.witness_script }
-    fn bip32_derivation(&mut self) -> &mut BTreeMap<secp256k1::PublicKey, bip32::KeySource> {
+    fn bip32_derivation(&mut self) -> &mut BTreeMap<bitcoin::PublicKey, bip32::KeySource> {
         &mut self.bip32_derivation
     }
     fn tap_internal_key(&mut self) -> &mut Option<bitcoin::key::XOnlyPublicKey> {
@@ -1053,7 +1053,7 @@ impl PsbtFields for Input {
 impl PsbtFields for Output {
     fn redeem_script(&mut self) -> &mut Option<ScriptBuf> { &mut self.redeem_script }
     fn witness_script(&mut self) -> &mut Option<ScriptBuf> { &mut self.witness_script }
-    fn bip32_derivation(&mut self) -> &mut BTreeMap<secp256k1::PublicKey, bip32::KeySource> {
+    fn bip32_derivation(&mut self) -> &mut BTreeMap<bitcoin::PublicKey, bip32::KeySource> {
         &mut self.bip32_derivation
     }
     fn tap_internal_key(&mut self) -> &mut Option<bitcoin::key::XOnlyPublicKey> {
@@ -1409,8 +1409,7 @@ mod tests {
     use bitcoin::bip32::{DerivationPath, Xpub};
     use bitcoin::consensus::encode::deserialize;
     use bitcoin::hashes::hex::FromHex;
-    use bitcoin::key::XOnlyPublicKey;
-    use bitcoin::secp256k1::PublicKey;
+    use bitcoin::key::{PublicKey, XOnlyPublicKey};
     use bitcoin::{absolute, Amount, OutPoint, TxIn, TxOut};
 
     use super::*;

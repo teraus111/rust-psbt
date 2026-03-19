@@ -8,7 +8,7 @@ use bitcoin::blockdata::transaction::{Transaction, TxOut};
 use bitcoin::blockdata::witness::Witness;
 use bitcoin::hashes::{self, hash160, ripemd160, sha256, sha256d};
 use bitcoin::key::PublicKey;
-use bitcoin::secp256k1::{self, XOnlyPublicKey};
+use bitcoin::secp256k1::XOnlyPublicKey;
 use bitcoin::sighash::{EcdsaSighashType, NonStandardSighashTypeError, TapSighashType};
 use bitcoin::taproot::{ControlBlock, LeafVersion, TapLeafHash, TapNodeHash};
 use bitcoin::{ecdsa, taproot};
@@ -96,7 +96,7 @@ pub struct Input {
     /// A map from public keys needed to sign this input to their corresponding
     /// master key fingerprints and derivation paths.
     #[cfg_attr(feature = "serde", serde(with = "crate::serde_utils::btreemap_as_seq"))]
-    pub bip32_derivation: BTreeMap<secp256k1::PublicKey, KeySource>,
+    pub bip32_derivation: BTreeMap<PublicKey, KeySource>,
     /// The finalized, fully-constructed scriptSig with signatures and any other
     /// scripts necessary for this input to pass validation.
     pub final_script_sig: Option<ScriptBuf>,
@@ -199,7 +199,7 @@ impl Input {
             }
             PSBT_IN_BIP32_DERIVATION => {
                 impl_psbt_insert_pair! {
-                    self.bip32_derivation <= <raw_key: secp256k1::PublicKey>|<raw_value: KeySource>
+                    self.bip32_derivation <= <raw_key: PublicKey>|<raw_value: KeySource>
                 }
             }
             PSBT_IN_FINAL_SCRIPTSIG => {

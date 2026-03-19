@@ -836,7 +836,7 @@ pub unsafe fn psbt_v2::v0::bitcoin::SigningKeys::clone_to_uninit(&self, dest: *m
 impl<T> core::convert::From<T> for psbt_v2::v0::bitcoin::SigningKeys
 pub fn psbt_v2::v0::bitcoin::SigningKeys::from(t: T) -> T
 pub struct psbt_v2::v0::bitcoin::Input
-pub psbt_v2::v0::bitcoin::Input::bip32_derivation: alloc::collections::btree::map::BTreeMap<secp256k1::key::PublicKey, bitcoin::bip32::KeySource>
+pub psbt_v2::v0::bitcoin::Input::bip32_derivation: alloc::collections::btree::map::BTreeMap<bitcoin::crypto::key::PublicKey, bitcoin::bip32::KeySource>
 pub psbt_v2::v0::bitcoin::Input::final_script_sig: core::option::Option<bitcoin::blockdata::script::owned::ScriptBuf>
 pub psbt_v2::v0::bitcoin::Input::final_script_witness: core::option::Option<bitcoin::blockdata::witness::Witness>
 pub psbt_v2::v0::bitcoin::Input::hash160_preimages: alloc::collections::btree::map::BTreeMap<bitcoin_hashes::hash160::Hash, alloc::vec::Vec<u8>>
@@ -903,7 +903,7 @@ pub unsafe fn psbt_v2::v0::Input::clone_to_uninit(&self, dest: *mut u8)
 impl<T> core::convert::From<T> for psbt_v2::v0::Input
 pub fn psbt_v2::v0::Input::from(t: T) -> T
 pub struct psbt_v2::v0::bitcoin::Output
-pub psbt_v2::v0::bitcoin::Output::bip32_derivation: alloc::collections::btree::map::BTreeMap<secp256k1::key::PublicKey, bitcoin::bip32::KeySource>
+pub psbt_v2::v0::bitcoin::Output::bip32_derivation: alloc::collections::btree::map::BTreeMap<bitcoin::crypto::key::PublicKey, bitcoin::bip32::KeySource>
 pub psbt_v2::v0::bitcoin::Output::proprietary: alloc::collections::btree::map::BTreeMap<psbt_v2::v0::bitcoin::raw::ProprietaryKey, alloc::vec::Vec<u8>>
 pub psbt_v2::v0::bitcoin::Output::redeem_script: core::option::Option<bitcoin::blockdata::script::owned::ScriptBuf>
 pub psbt_v2::v0::bitcoin::Output::tap_internal_key: core::option::Option<secp256k1::key::XOnlyPublicKey>
@@ -1084,7 +1084,7 @@ pub unsafe fn psbt_v2::v0::SignerChecksError::clone_to_uninit(&self, dest: *mut 
 impl<T> core::convert::From<T> for psbt_v2::v0::SignerChecksError
 pub fn psbt_v2::v0::SignerChecksError::from(t: T) -> T
 pub struct psbt_v2::v0::Input
-pub psbt_v2::v0::Input::bip32_derivation: alloc::collections::btree::map::BTreeMap<secp256k1::key::PublicKey, bitcoin::bip32::KeySource>
+pub psbt_v2::v0::Input::bip32_derivation: alloc::collections::btree::map::BTreeMap<bitcoin::crypto::key::PublicKey, bitcoin::bip32::KeySource>
 pub psbt_v2::v0::Input::final_script_sig: core::option::Option<bitcoin::blockdata::script::owned::ScriptBuf>
 pub psbt_v2::v0::Input::final_script_witness: core::option::Option<bitcoin::blockdata::witness::Witness>
 pub psbt_v2::v0::Input::hash160_preimages: alloc::collections::btree::map::BTreeMap<bitcoin_hashes::hash160::Hash, alloc::vec::Vec<u8>>
@@ -1151,7 +1151,7 @@ pub unsafe fn psbt_v2::v0::Input::clone_to_uninit(&self, dest: *mut u8)
 impl<T> core::convert::From<T> for psbt_v2::v0::Input
 pub fn psbt_v2::v0::Input::from(t: T) -> T
 pub struct psbt_v2::v0::Output
-pub psbt_v2::v0::Output::bip32_derivation: alloc::collections::btree::map::BTreeMap<secp256k1::key::PublicKey, bitcoin::bip32::KeySource>
+pub psbt_v2::v0::Output::bip32_derivation: alloc::collections::btree::map::BTreeMap<bitcoin::crypto::key::PublicKey, bitcoin::bip32::KeySource>
 pub psbt_v2::v0::Output::proprietary: alloc::collections::btree::map::BTreeMap<psbt_v2::v0::bitcoin::raw::ProprietaryKey, alloc::vec::Vec<u8>>
 pub psbt_v2::v0::Output::redeem_script: core::option::Option<bitcoin::blockdata::script::owned::ScriptBuf>
 pub psbt_v2::v0::Output::tap_internal_key: core::option::Option<secp256k1::key::XOnlyPublicKey>
@@ -1707,7 +1707,7 @@ pub unsafe fn psbt_v2::v2::input::HashPreimageError::clone_to_uninit(&self, dest
 impl<T> core::convert::From<T> for psbt_v2::v2::input::HashPreimageError
 pub fn psbt_v2::v2::input::HashPreimageError::from(t: T) -> T
 pub struct psbt_v2::v2::input::Input
-pub psbt_v2::v2::input::Input::bip32_derivations: alloc::collections::btree::map::BTreeMap<secp256k1::key::PublicKey, bitcoin::bip32::KeySource>
+pub psbt_v2::v2::input::Input::bip32_derivations: alloc::collections::btree::map::BTreeMap<bitcoin::crypto::key::PublicKey, bitcoin::bip32::KeySource>
 pub psbt_v2::v2::input::Input::final_script_sig: core::option::Option<bitcoin::blockdata::script::owned::ScriptBuf>
 pub psbt_v2::v2::input::Input::final_script_witness: core::option::Option<bitcoin::blockdata::witness::Witness>
 pub psbt_v2::v2::input::Input::hash160_preimages: alloc::collections::btree::map::BTreeMap<bitcoin_hashes::hash160::Hash, alloc::vec::Vec<u8>>
@@ -1943,7 +1943,7 @@ impl<T> core::convert::From<T> for psbt_v2::v2::output::InsertPairError
 pub fn psbt_v2::v2::output::InsertPairError::from(t: T) -> T
 pub struct psbt_v2::v2::output::Output
 pub psbt_v2::v2::output::Output::amount: bitcoin_units::amount::Amount
-pub psbt_v2::v2::output::Output::bip32_derivations: alloc::collections::btree::map::BTreeMap<secp256k1::key::PublicKey, bitcoin::bip32::KeySource>
+pub psbt_v2::v2::output::Output::bip32_derivations: alloc::collections::btree::map::BTreeMap<bitcoin::crypto::key::PublicKey, bitcoin::bip32::KeySource>
 pub psbt_v2::v2::output::Output::proprietaries: alloc::collections::btree::map::BTreeMap<psbt_v2::raw::ProprietaryKey, alloc::vec::Vec<u8>>
 pub psbt_v2::v2::output::Output::redeem_script: core::option::Option<bitcoin::blockdata::script::owned::ScriptBuf>
 pub psbt_v2::v2::output::Output::script_pubkey: bitcoin::blockdata::script::owned::ScriptBuf
@@ -3065,7 +3065,7 @@ pub unsafe fn psbt_v2::v2::Global::clone_to_uninit(&self, dest: *mut u8)
 impl<T> core::convert::From<T> for psbt_v2::v2::Global
 pub fn psbt_v2::v2::Global::from(t: T) -> T
 pub struct psbt_v2::v2::Input
-pub psbt_v2::v2::Input::bip32_derivations: alloc::collections::btree::map::BTreeMap<secp256k1::key::PublicKey, bitcoin::bip32::KeySource>
+pub psbt_v2::v2::Input::bip32_derivations: alloc::collections::btree::map::BTreeMap<bitcoin::crypto::key::PublicKey, bitcoin::bip32::KeySource>
 pub psbt_v2::v2::Input::final_script_sig: core::option::Option<bitcoin::blockdata::script::owned::ScriptBuf>
 pub psbt_v2::v2::Input::final_script_witness: core::option::Option<bitcoin::blockdata::witness::Witness>
 pub psbt_v2::v2::Input::hash160_preimages: alloc::collections::btree::map::BTreeMap<bitcoin_hashes::hash160::Hash, alloc::vec::Vec<u8>>
@@ -3214,7 +3214,7 @@ impl<T> core::convert::From<T> for psbt_v2::v2::InputsNotModifiableError
 pub fn psbt_v2::v2::InputsNotModifiableError::from(t: T) -> T
 pub struct psbt_v2::v2::Output
 pub psbt_v2::v2::Output::amount: bitcoin_units::amount::Amount
-pub psbt_v2::v2::Output::bip32_derivations: alloc::collections::btree::map::BTreeMap<secp256k1::key::PublicKey, bitcoin::bip32::KeySource>
+pub psbt_v2::v2::Output::bip32_derivations: alloc::collections::btree::map::BTreeMap<bitcoin::crypto::key::PublicKey, bitcoin::bip32::KeySource>
 pub psbt_v2::v2::Output::proprietaries: alloc::collections::btree::map::BTreeMap<psbt_v2::raw::ProprietaryKey, alloc::vec::Vec<u8>>
 pub psbt_v2::v2::Output::redeem_script: core::option::Option<bitcoin::blockdata::script::owned::ScriptBuf>
 pub psbt_v2::v2::Output::script_pubkey: bitcoin::blockdata::script::owned::ScriptBuf

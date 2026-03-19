@@ -950,7 +950,7 @@ pub fn psbt_v2::v0::bitcoin::SigningKeys::from(t: T) -> T
 impl<V, T> ppv_lite86::types::VZip<V> for psbt_v2::v0::bitcoin::SigningKeys where V: ppv_lite86::types::MultiLane<T>
 pub fn psbt_v2::v0::bitcoin::SigningKeys::vzip(self) -> V
 pub struct psbt_v2::v0::bitcoin::Input
-pub psbt_v2::v0::bitcoin::Input::bip32_derivation: alloc::collections::btree::map::BTreeMap<secp256k1::key::PublicKey, bitcoin::bip32::KeySource>
+pub psbt_v2::v0::bitcoin::Input::bip32_derivation: alloc::collections::btree::map::BTreeMap<bitcoin::crypto::key::PublicKey, bitcoin::bip32::KeySource>
 pub psbt_v2::v0::bitcoin::Input::final_script_sig: core::option::Option<bitcoin::blockdata::script::owned::ScriptBuf>
 pub psbt_v2::v0::bitcoin::Input::final_script_witness: core::option::Option<bitcoin::blockdata::witness::Witness>
 pub psbt_v2::v0::bitcoin::Input::hash160_preimages: alloc::collections::btree::map::BTreeMap<bitcoin_hashes::hash160::Hash, alloc::vec::Vec<u8>>
@@ -1026,7 +1026,7 @@ impl<T> serde::de::DeserializeOwned for psbt_v2::v0::Input where T: for<'de> ser
 impl<V, T> ppv_lite86::types::VZip<V> for psbt_v2::v0::Input where V: ppv_lite86::types::MultiLane<T>
 pub fn psbt_v2::v0::Input::vzip(self) -> V
 pub struct psbt_v2::v0::bitcoin::Output
-pub psbt_v2::v0::bitcoin::Output::bip32_derivation: alloc::collections::btree::map::BTreeMap<secp256k1::key::PublicKey, bitcoin::bip32::KeySource>
+pub psbt_v2::v0::bitcoin::Output::bip32_derivation: alloc::collections::btree::map::BTreeMap<bitcoin::crypto::key::PublicKey, bitcoin::bip32::KeySource>
 pub psbt_v2::v0::bitcoin::Output::proprietary: alloc::collections::btree::map::BTreeMap<psbt_v2::v0::bitcoin::raw::ProprietaryKey, alloc::vec::Vec<u8>>
 pub psbt_v2::v0::bitcoin::Output::redeem_script: core::option::Option<bitcoin::blockdata::script::owned::ScriptBuf>
 pub psbt_v2::v0::bitcoin::Output::tap_internal_key: core::option::Option<secp256k1::key::XOnlyPublicKey>
@@ -1679,7 +1679,7 @@ pub fn psbt_v2::v0::SignerChecksError::from(t: T) -> T
 impl<V, T> ppv_lite86::types::VZip<V> for psbt_v2::v0::SignerChecksError where V: ppv_lite86::types::MultiLane<T>
 pub fn psbt_v2::v0::SignerChecksError::vzip(self) -> V
 pub struct psbt_v2::v0::Input
-pub psbt_v2::v0::Input::bip32_derivation: alloc::collections::btree::map::BTreeMap<secp256k1::key::PublicKey, bitcoin::bip32::KeySource>
+pub psbt_v2::v0::Input::bip32_derivation: alloc::collections::btree::map::BTreeMap<bitcoin::crypto::key::PublicKey, bitcoin::bip32::KeySource>
 pub psbt_v2::v0::Input::final_script_sig: core::option::Option<bitcoin::blockdata::script::owned::ScriptBuf>
 pub psbt_v2::v0::Input::final_script_witness: core::option::Option<bitcoin::blockdata::witness::Witness>
 pub psbt_v2::v0::Input::hash160_preimages: alloc::collections::btree::map::BTreeMap<bitcoin_hashes::hash160::Hash, alloc::vec::Vec<u8>>
@@ -1755,7 +1755,7 @@ impl<T> serde::de::DeserializeOwned for psbt_v2::v0::Input where T: for<'de> ser
 impl<V, T> ppv_lite86::types::VZip<V> for psbt_v2::v0::Input where V: ppv_lite86::types::MultiLane<T>
 pub fn psbt_v2::v0::Input::vzip(self) -> V
 pub struct psbt_v2::v0::Output
-pub psbt_v2::v0::Output::bip32_derivation: alloc::collections::btree::map::BTreeMap<secp256k1::key::PublicKey, bitcoin::bip32::KeySource>
+pub psbt_v2::v0::Output::bip32_derivation: alloc::collections::btree::map::BTreeMap<bitcoin::crypto::key::PublicKey, bitcoin::bip32::KeySource>
 pub psbt_v2::v0::Output::proprietary: alloc::collections::btree::map::BTreeMap<psbt_v2::v0::bitcoin::raw::ProprietaryKey, alloc::vec::Vec<u8>>
 pub psbt_v2::v0::Output::redeem_script: core::option::Option<bitcoin::blockdata::script::owned::ScriptBuf>
 pub psbt_v2::v0::Output::tap_internal_key: core::option::Option<secp256k1::key::XOnlyPublicKey>
@@ -2549,7 +2549,7 @@ pub fn psbt_v2::v2::input::HashPreimageError::from(t: T) -> T
 impl<V, T> ppv_lite86::types::VZip<V> for psbt_v2::v2::input::HashPreimageError where V: ppv_lite86::types::MultiLane<T>
 pub fn psbt_v2::v2::input::HashPreimageError::vzip(self) -> V
 pub struct psbt_v2::v2::input::Input
-pub psbt_v2::v2::input::Input::bip32_derivations: alloc::collections::btree::map::BTreeMap<secp256k1::key::PublicKey, bitcoin::bip32::KeySource>
+pub psbt_v2::v2::input::Input::bip32_derivations: alloc::collections::btree::map::BTreeMap<bitcoin::crypto::key::PublicKey, bitcoin::bip32::KeySource>
 pub psbt_v2::v2::input::Input::final_script_sig: core::option::Option<bitcoin::blockdata::script::owned::ScriptBuf>
 pub psbt_v2::v2::input::Input::final_script_witness: core::option::Option<bitcoin::blockdata::witness::Witness>
 pub psbt_v2::v2::input::Input::hash160_preimages: alloc::collections::btree::map::BTreeMap<bitcoin_hashes::hash160::Hash, alloc::vec::Vec<u8>>
@@ -2808,7 +2808,7 @@ impl<V, T> ppv_lite86::types::VZip<V> for psbt_v2::v2::output::InsertPairError w
 pub fn psbt_v2::v2::output::InsertPairError::vzip(self) -> V
 pub struct psbt_v2::v2::output::Output
 pub psbt_v2::v2::output::Output::amount: bitcoin_units::amount::Amount
-pub psbt_v2::v2::output::Output::bip32_derivations: alloc::collections::btree::map::BTreeMap<secp256k1::key::PublicKey, bitcoin::bip32::KeySource>
+pub psbt_v2::v2::output::Output::bip32_derivations: alloc::collections::btree::map::BTreeMap<bitcoin::crypto::key::PublicKey, bitcoin::bip32::KeySource>
 pub psbt_v2::v2::output::Output::proprietaries: alloc::collections::btree::map::BTreeMap<psbt_v2::raw::ProprietaryKey, alloc::vec::Vec<u8>>
 pub psbt_v2::v2::output::Output::redeem_script: core::option::Option<bitcoin::blockdata::script::owned::ScriptBuf>
 pub psbt_v2::v2::output::Output::script_pubkey: bitcoin::blockdata::script::owned::ScriptBuf
@@ -4422,7 +4422,7 @@ impl<T> serde::de::DeserializeOwned for psbt_v2::v2::Global where T: for<'de> se
 impl<V, T> ppv_lite86::types::VZip<V> for psbt_v2::v2::Global where V: ppv_lite86::types::MultiLane<T>
 pub fn psbt_v2::v2::Global::vzip(self) -> V
 pub struct psbt_v2::v2::Input
-pub psbt_v2::v2::Input::bip32_derivations: alloc::collections::btree::map::BTreeMap<secp256k1::key::PublicKey, bitcoin::bip32::KeySource>
+pub psbt_v2::v2::Input::bip32_derivations: alloc::collections::btree::map::BTreeMap<bitcoin::crypto::key::PublicKey, bitcoin::bip32::KeySource>
 pub psbt_v2::v2::Input::final_script_sig: core::option::Option<bitcoin::blockdata::script::owned::ScriptBuf>
 pub psbt_v2::v2::Input::final_script_witness: core::option::Option<bitcoin::blockdata::witness::Witness>
 pub psbt_v2::v2::Input::hash160_preimages: alloc::collections::btree::map::BTreeMap<bitcoin_hashes::hash160::Hash, alloc::vec::Vec<u8>>
@@ -4633,7 +4633,7 @@ impl<V, T> ppv_lite86::types::VZip<V> for psbt_v2::v2::dleq::InvalidLengthError 
 pub fn psbt_v2::v2::dleq::InvalidLengthError::vzip(self) -> V
 pub struct psbt_v2::v2::Output
 pub psbt_v2::v2::Output::amount: bitcoin_units::amount::Amount
-pub psbt_v2::v2::Output::bip32_derivations: alloc::collections::btree::map::BTreeMap<secp256k1::key::PublicKey, bitcoin::bip32::KeySource>
+pub psbt_v2::v2::Output::bip32_derivations: alloc::collections::btree::map::BTreeMap<bitcoin::crypto::key::PublicKey, bitcoin::bip32::KeySource>
 pub psbt_v2::v2::Output::proprietaries: alloc::collections::btree::map::BTreeMap<psbt_v2::raw::ProprietaryKey, alloc::vec::Vec<u8>>
 pub psbt_v2::v2::Output::redeem_script: core::option::Option<bitcoin::blockdata::script::owned::ScriptBuf>
 pub psbt_v2::v2::Output::script_pubkey: bitcoin::blockdata::script::owned::ScriptBuf
