@@ -18,7 +18,7 @@ use crate::consts::{
 #[cfg(feature = "silent-payments")]
 use crate::consts::{PSBT_GLOBAL_SP_DLEQ, PSBT_GLOBAL_SP_ECDH_SHARE};
 use crate::error::{write_err, InconsistentKeySourcesError};
-use crate::io::{BufRead, Cursor, Read};
+use crate::io::{Cursor, Read};
 use crate::prelude::*;
 use crate::serialize::Serialize;
 #[cfg(feature = "silent-payments")]
@@ -140,7 +140,7 @@ impl Global {
         self.tx_modifiable_flags & SIGHASH_SINGLE > 0
     }
 
-    pub(crate) fn decode<R: BufRead + ?Sized>(r: &mut R) -> Result<Self, DecodeError> {
+    pub(crate) fn decode<R: Read + ?Sized>(r: &mut R) -> Result<Self, DecodeError> {
         // TODO: Consider adding protection against memory exhaustion here by defining a maximum
         // PBST size and using `take` as we do in rust-bitcoin consensus decoding.
         let mut version: Option<Version> = None;

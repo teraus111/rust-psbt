@@ -4,7 +4,7 @@ use core::convert::TryFrom;
 use core::fmt;
 
 use bitcoin::bip32::KeySource;
-use bitcoin::io::BufRead;
+use bitcoin::io::Read;
 use bitcoin::key::{PublicKey, XOnlyPublicKey};
 use bitcoin::taproot::{TapLeafHash, TapTree};
 use bitcoin::{Amount, ScriptBuf, TxOut};
@@ -105,7 +105,7 @@ impl Output {
         TxOut { value: self.amount, script_pubkey: self.script_pubkey.clone() }
     }
 
-    pub(in crate::v2) fn decode<R: BufRead + ?Sized>(r: &mut R) -> Result<Self, DecodeError> {
+    pub(in crate::v2) fn decode<R: Read + ?Sized>(r: &mut R) -> Result<Self, DecodeError> {
         // These are placeholder values that never exist in a encode `Output`.
         let invalid = TxOut { value: Amount::ZERO, script_pubkey: ScriptBuf::default() };
         let mut rv = Self::new(invalid);

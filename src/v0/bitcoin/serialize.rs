@@ -83,8 +83,8 @@ impl Psbt {
         Self::deserialize_from_reader(&mut bytes)
     }
 
-    /// Deserialize a value from raw binary data read from a `BufRead` object.
-    pub fn deserialize_from_reader<R: io::BufRead>(r: &mut R) -> Result<Self, Error> {
+    /// Deserialize a value from raw binary data read from a `Read` object.
+    pub fn deserialize_from_reader<R: io::Read>(r: &mut R) -> Result<Self, Error> {
         const MAGIC_BYTES: &[u8] = b"psbt";
 
         let magic: [u8; 4] = Decodable::consensus_decode(r)?;
