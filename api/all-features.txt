@@ -651,6 +651,7 @@ pub fn psbt_v2::v0::bitcoin::IndexOutOfBoundsError::vzip(self) -> V
 #[non_exhaustive] pub enum psbt_v2::v0::bitcoin::KeyRequest
 pub psbt_v2::v0::bitcoin::KeyRequest::Bip32(bitcoin::bip32::KeySource)
 pub psbt_v2::v0::bitcoin::KeyRequest::Pubkey(bitcoin::crypto::key::PublicKey)
+pub psbt_v2::v0::bitcoin::KeyRequest::XOnlyPubkey(secp256k1::key::XOnlyPublicKey)
 impl core::clone::Clone for psbt_v2::v0::bitcoin::KeyRequest
 pub fn psbt_v2::v0::bitcoin::KeyRequest::clone(&self) -> psbt_v2::v0::bitcoin::KeyRequest
 impl core::cmp::Eq for psbt_v2::v0::bitcoin::KeyRequest
@@ -1109,8 +1110,10 @@ pub fn psbt_v2::v0::bitcoin::Psbt::sign<C, K>(&mut self, k: &K, secp: &secp256k1
 pub fn psbt_v2::v0::bitcoin::Psbt::spend_utxo(&self, input_index: usize) -> core::result::Result<&bitcoin::blockdata::transaction::TxOut, psbt_v2::v0::bitcoin::SignError>
 impl psbt_v2::v0::bitcoin::Psbt
 pub fn psbt_v2::v0::bitcoin::Psbt::deserialize(bytes: &[u8]) -> core::result::Result<Self, psbt_v2::v0::bitcoin::Error>
+pub fn psbt_v2::v0::bitcoin::Psbt::deserialize_from_reader<R: bitcoin_io::Read>(r: &mut R) -> core::result::Result<Self, psbt_v2::v0::bitcoin::Error>
 pub fn psbt_v2::v0::bitcoin::Psbt::serialize(&self) -> alloc::vec::Vec<u8>
 pub fn psbt_v2::v0::bitcoin::Psbt::serialize_hex(&self) -> alloc::string::String
+pub fn psbt_v2::v0::bitcoin::Psbt::serialize_to_writer(&self, w: &mut impl bitcoin_io::Write) -> bitcoin_io::Result<usize>
 impl psbt_v2::v0::bitcoin::Psbt
 pub fn psbt_v2::v0::bitcoin::Psbt::signer_checks(&self) -> core::result::Result<(), psbt_v2::v0::SignerChecksError>
 impl core::clone::Clone for psbt_v2::v0::bitcoin::Psbt
@@ -1185,6 +1188,9 @@ pub fn psbt_v2::v0::bitcoin::GetKey::get_key<C: secp256k1::context::Signing>(&se
 impl psbt_v2::v0::bitcoin::GetKey for alloc::collections::btree::map::BTreeMap<bitcoin::crypto::key::PublicKey, bitcoin::crypto::key::PrivateKey>
 pub type alloc::collections::btree::map::BTreeMap<bitcoin::crypto::key::PublicKey, bitcoin::crypto::key::PrivateKey>::Error = psbt_v2::v0::bitcoin::GetKeyError
 pub fn alloc::collections::btree::map::BTreeMap<bitcoin::crypto::key::PublicKey, bitcoin::crypto::key::PrivateKey>::get_key<C: secp256k1::context::Signing>(&self, key_request: psbt_v2::v0::bitcoin::KeyRequest, _: &secp256k1::Secp256k1<C>) -> core::result::Result<core::option::Option<bitcoin::crypto::key::PrivateKey>, Self::Error>
+impl psbt_v2::v0::bitcoin::GetKey for alloc::collections::btree::map::BTreeMap<secp256k1::key::XOnlyPublicKey, bitcoin::crypto::key::PrivateKey>
+pub type alloc::collections::btree::map::BTreeMap<secp256k1::key::XOnlyPublicKey, bitcoin::crypto::key::PrivateKey>::Error = psbt_v2::v0::bitcoin::GetKeyError
+pub fn alloc::collections::btree::map::BTreeMap<secp256k1::key::XOnlyPublicKey, bitcoin::crypto::key::PrivateKey>::get_key<C: secp256k1::context::Signing>(&self, key_request: psbt_v2::v0::bitcoin::KeyRequest, secp: &secp256k1::Secp256k1<C>) -> core::result::Result<core::option::Option<bitcoin::crypto::key::PrivateKey>, Self::Error>
 impl psbt_v2::v0::bitcoin::GetKey for alloc::collections::btree::set::BTreeSet<bitcoin::bip32::Xpriv>
 pub type alloc::collections::btree::set::BTreeSet<bitcoin::bip32::Xpriv>::Error = psbt_v2::v0::bitcoin::GetKeyError
 pub fn alloc::collections::btree::set::BTreeSet<bitcoin::bip32::Xpriv>::get_key<C: secp256k1::context::Signing>(&self, key_request: psbt_v2::v0::bitcoin::KeyRequest, secp: &secp256k1::Secp256k1<C>) -> core::result::Result<core::option::Option<bitcoin::crypto::key::PrivateKey>, Self::Error>
@@ -1194,6 +1200,9 @@ pub fn bitcoin::bip32::Xpriv::get_key<C: secp256k1::context::Signing>(&self, key
 impl psbt_v2::v0::bitcoin::GetKey for std::collections::hash::map::HashMap<bitcoin::crypto::key::PublicKey, bitcoin::crypto::key::PrivateKey>
 pub type std::collections::hash::map::HashMap<bitcoin::crypto::key::PublicKey, bitcoin::crypto::key::PrivateKey>::Error = psbt_v2::v0::bitcoin::GetKeyError
 pub fn std::collections::hash::map::HashMap<bitcoin::crypto::key::PublicKey, bitcoin::crypto::key::PrivateKey>::get_key<C: secp256k1::context::Signing>(&self, key_request: psbt_v2::v0::bitcoin::KeyRequest, _: &secp256k1::Secp256k1<C>) -> core::result::Result<core::option::Option<bitcoin::crypto::key::PrivateKey>, Self::Error>
+impl psbt_v2::v0::bitcoin::GetKey for std::collections::hash::map::HashMap<secp256k1::key::XOnlyPublicKey, bitcoin::crypto::key::PrivateKey>
+pub type std::collections::hash::map::HashMap<secp256k1::key::XOnlyPublicKey, bitcoin::crypto::key::PrivateKey>::Error = psbt_v2::v0::bitcoin::GetKeyError
+pub fn std::collections::hash::map::HashMap<secp256k1::key::XOnlyPublicKey, bitcoin::crypto::key::PrivateKey>::get_key<C: secp256k1::context::Signing>(&self, key_request: psbt_v2::v0::bitcoin::KeyRequest, secp: &secp256k1::Secp256k1<C>) -> core::result::Result<core::option::Option<bitcoin::crypto::key::PrivateKey>, Self::Error>
 impl psbt_v2::v0::bitcoin::GetKey for std::collections::hash::set::HashSet<bitcoin::bip32::Xpriv>
 pub type std::collections::hash::set::HashSet<bitcoin::bip32::Xpriv>::Error = psbt_v2::v0::bitcoin::GetKeyError
 pub fn std::collections::hash::set::HashSet<bitcoin::bip32::Xpriv>::get_key<C: secp256k1::context::Signing>(&self, key_request: psbt_v2::v0::bitcoin::KeyRequest, secp: &secp256k1::Secp256k1<C>) -> core::result::Result<core::option::Option<bitcoin::crypto::key::PrivateKey>, Self::Error>
@@ -1838,8 +1847,10 @@ pub fn psbt_v2::v0::bitcoin::Psbt::sign<C, K>(&mut self, k: &K, secp: &secp256k1
 pub fn psbt_v2::v0::bitcoin::Psbt::spend_utxo(&self, input_index: usize) -> core::result::Result<&bitcoin::blockdata::transaction::TxOut, psbt_v2::v0::bitcoin::SignError>
 impl psbt_v2::v0::bitcoin::Psbt
 pub fn psbt_v2::v0::bitcoin::Psbt::deserialize(bytes: &[u8]) -> core::result::Result<Self, psbt_v2::v0::bitcoin::Error>
+pub fn psbt_v2::v0::bitcoin::Psbt::deserialize_from_reader<R: bitcoin_io::Read>(r: &mut R) -> core::result::Result<Self, psbt_v2::v0::bitcoin::Error>
 pub fn psbt_v2::v0::bitcoin::Psbt::serialize(&self) -> alloc::vec::Vec<u8>
 pub fn psbt_v2::v0::bitcoin::Psbt::serialize_hex(&self) -> alloc::string::String
+pub fn psbt_v2::v0::bitcoin::Psbt::serialize_to_writer(&self, w: &mut impl bitcoin_io::Write) -> bitcoin_io::Result<usize>
 impl psbt_v2::v0::bitcoin::Psbt
 pub fn psbt_v2::v0::bitcoin::Psbt::signer_checks(&self) -> core::result::Result<(), psbt_v2::v0::SignerChecksError>
 impl core::clone::Clone for psbt_v2::v0::bitcoin::Psbt

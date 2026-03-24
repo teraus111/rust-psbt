@@ -14,7 +14,7 @@ use bitcoin::consensus::encode::{
 };
 
 use super::serialize::{Deserialize, Serialize};
-use crate::io::{self, BufRead, Write};
+use crate::io::{self, Write};
 use crate::prelude::*;
 use crate::v0::bitcoin::Error;
 
@@ -72,7 +72,7 @@ impl fmt::Display for Key {
 }
 
 impl Key {
-    pub(crate) fn decode<R: BufRead + ?Sized>(r: &mut R) -> Result<Self, Error> {
+    pub(crate) fn decode<R: io::Read + ?Sized>(r: &mut R) -> Result<Self, Error> {
         let VarInt(byte_size): VarInt = Decodable::consensus_decode(r)?;
 
         if byte_size == 0 {
@@ -135,7 +135,7 @@ impl Deserialize for Pair {
 }
 
 impl Pair {
-    pub(crate) fn decode<R: BufRead + ?Sized>(r: &mut R) -> Result<Self, Error> {
+    pub(crate) fn decode<R: io::Read + ?Sized>(r: &mut R) -> Result<Self, Error> {
         Ok(Pair { key: Key::decode(r)?, value: Decodable::consensus_decode(r)? })
     }
 }
