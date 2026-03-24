@@ -1,6 +1,18 @@
 # Unreleased
 
+# 0.3.0 - 2026-03-24
+
+The 0.3.0 version is the last major release for `bitcoin v0.32.x`. Only security patches will be added to the v0.3.x branch.
+
 - Bump MSRV to Rust `v1.74.0`.
+- Upgrade dependencies and copied implementations.
+  - `bitcoin v0.32.8`
+  - `miniscript v12.3.5`
+- Simplify feature flags.
+  - Consolidate miniscript into a single `miniscript` feature
+  - Rename `rand-std` to `rand`
+  - Remove the `no-std` feature (use `default-features = false` instead).
+- Add `silent-payments` feature.
 
 # 0.2.0 - 2024-08-22
 
