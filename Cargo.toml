@@ -12,6 +12,19 @@ edition = "2021"
 rust-version = "1.74.0"
 exclude = ["api", "tests", "contrib"]
 
+[package.metadata.rbmt]
+toolchains = { nightly = "nightly-2026-02-21", stable = "1.94.0" }
+
+[package.metadata.rbmt.test]
+examples = [
+    "v0:std rand",
+    "v2:std",
+    "v2-separate-creator-constructor:std",
+]
+exact_features = [
+    ["std", "miniscript", "serde"],
+]
+
 [package.metadata.docs.rs]
 all-features = true
 rustdoc-args = ["--cfg", "docsrs"]
