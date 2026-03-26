@@ -263,6 +263,8 @@ pub fn psbt_v2::v0::bitcoin::raw::Key::hash<__H: core::hash::Hasher>(&self, stat
 impl core::marker::StructuralPartialEq for psbt_v2::v0::bitcoin::raw::Key
 impl serde::ser::Serialize for psbt_v2::v0::bitcoin::raw::Key
 pub fn psbt_v2::v0::bitcoin::raw::Key::serialize<__S>(&self, __serializer: __S) -> core::result::Result<<__S as serde::ser::Serializer>::Ok, <__S as serde::ser::Serializer>::Error> where __S: serde::ser::Serializer
+impl<'a> arbitrary::Arbitrary<'a> for psbt_v2::v0::bitcoin::raw::Key
+pub fn psbt_v2::v0::bitcoin::raw::Key::arbitrary(u: &mut arbitrary::unstructured::Unstructured<'a>) -> arbitrary::error::Result<Self>
 impl<'de> serde::de::Deserialize<'de> for psbt_v2::v0::bitcoin::raw::Key
 pub fn psbt_v2::v0::bitcoin::raw::Key::deserialize<__D>(__deserializer: __D) -> core::result::Result<Self, <__D as serde::de::Deserializer>::Error> where __D: serde::de::Deserializer<'de>
 impl<Subtype> core::convert::TryFrom<psbt_v2::v0::bitcoin::raw::Key> for psbt_v2::v0::bitcoin::raw::ProprietaryKey<Subtype> where Subtype: core::marker::Copy + core::convert::From<u8> + core::convert::Into<u8>
@@ -347,6 +349,8 @@ pub psbt_v2::v0::bitcoin::raw::ProprietaryKey::prefix: alloc::vec::Vec<u8>
 pub psbt_v2::v0::bitcoin::raw::ProprietaryKey::subtype: Subtype
 impl<Subtype> psbt_v2::v0::bitcoin::raw::ProprietaryKey<Subtype> where Subtype: core::marker::Copy + core::convert::From<u8> + core::convert::Into<u8>
 pub fn psbt_v2::v0::bitcoin::raw::ProprietaryKey<Subtype>::to_key(&self) -> psbt_v2::v0::bitcoin::raw::Key
+impl<'a> arbitrary::Arbitrary<'a> for psbt_v2::v0::bitcoin::raw::ProprietaryKey
+pub fn psbt_v2::v0::bitcoin::raw::ProprietaryKey::arbitrary(u: &mut arbitrary::unstructured::Unstructured<'a>) -> arbitrary::error::Result<Self>
 impl<'de, Subtype> serde::de::Deserialize<'de> for psbt_v2::v0::bitcoin::raw::ProprietaryKey<Subtype> where Subtype: core::marker::Copy + core::convert::From<u8> + core::convert::Into<u8> + serde::de::Deserialize<'de>
 pub fn psbt_v2::v0::bitcoin::raw::ProprietaryKey<Subtype>::deserialize<__D>(__deserializer: __D) -> core::result::Result<Self, <__D as serde::de::Deserializer>::Error> where __D: serde::de::Deserializer<'de>
 impl<Subtype> bitcoin::consensus::encode::Decodable for psbt_v2::v0::bitcoin::raw::ProprietaryKey<Subtype> where Subtype: core::marker::Copy + core::convert::From<u8> + core::convert::Into<u8>
