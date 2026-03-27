@@ -196,3 +196,21 @@ where
         Ok(deserialize(&key.key)?)
     }
 }
+
+#[cfg(feature = "arbitrary")]
+impl<'a> arbitrary::Arbitrary<'a> for ProprietaryKey {
+    fn arbitrary(u: &mut arbitrary::Unstructured<'a>) -> arbitrary::Result<Self> {
+        Ok(ProprietaryKey {
+            prefix: Vec::<u8>::arbitrary(u)?,
+            subtype: u8::arbitrary(u)?,
+            key: Vec::<u8>::arbitrary(u)?,
+        })
+    }
+}
+
+#[cfg(feature = "arbitrary")]
+impl<'a> arbitrary::Arbitrary<'a> for Key {
+    fn arbitrary(u: &mut arbitrary::Unstructured<'a>) -> arbitrary::Result<Self> {
+        Ok(Key { type_value: u.arbitrary()?, key: Vec::<u8>::arbitrary(u)? })
+    }
+}
