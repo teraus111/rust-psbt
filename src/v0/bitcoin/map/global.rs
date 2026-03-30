@@ -26,6 +26,10 @@ const PSBT_GLOBAL_INPUT_COUNT: u8 = 0x04;
 const PSBT_GLOBAL_OUTPUT_COUNT: u8 = 0x05;
 /// Type: Transaction Modifiable Flags PSBT_GLOBAL_TX_MODIFIABLE = 0x06
 const PSBT_GLOBAL_TX_MODIFIABLE: u8 = 0x06;
+/// Type: Version Number PSBT_GLOBAL_SP_ECDH_SHARE = 0x07
+const PSBT_GLOBAL_SP_ECDH_SHARE: u8 = 0x07;
+/// Type: Version Number PSBT_GLOBAL_SP_DLEQ = 0x08
+const PSBT_GLOBAL_SP_DLEQ: u8 = 0x08;
 /// Type: Version Number PSBT_GLOBAL_VERSION = 0xFB
 const PSBT_GLOBAL_VERSION: u8 = 0xFB;
 
@@ -196,12 +200,13 @@ impl Psbt {
                             btree_map::Entry::Occupied(_) =>
                                 return Err(Error::DuplicateKey(pair.key)),
                         },
-                        v if v == PSBT_GLOBAL_TX_VERSION
-                            || v == PSBT_GLOBAL_TX_MODIFIABLE
-                            || v == PSBT_GLOBAL_FALLBACK_LOCKTIME
-                            || v == PSBT_GLOBAL_INPUT_COUNT
-                            || v == PSBT_GLOBAL_OUTPUT_COUNT =>
-                        {
+                        v @ (PSBT_GLOBAL_TX_VERSION
+                        | PSBT_GLOBAL_TX_MODIFIABLE
+                        | PSBT_GLOBAL_FALLBACK_LOCKTIME
+                        | PSBT_GLOBAL_INPUT_COUNT
+                        | PSBT_GLOBAL_OUTPUT_COUNT
+                        | PSBT_GLOBAL_SP_ECDH_SHARE
+                        | PSBT_GLOBAL_SP_DLEQ) => {
                             return Err(Error::ExcludedKey { key_type_value: v });
                         }
                         _ => match unknowns.entry(pair.key) {
