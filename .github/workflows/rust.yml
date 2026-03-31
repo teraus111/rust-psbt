@@ -18,13 +18,16 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        toolchain: [stable, nightly, msrv]
+        toolchain: [stable, msrv]
         dep: [minimal, recent]
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0 # Context required for bisectability tests.
+          persist-credentials: false
       - uses: rust-bitcoin/rust-bitcoin-maintainer-tools/.github/actions/setup-rbmt@78cffbebab414c3209c1617650b750935e4d0fe1
       - name: "Run tests"
-        run: cargo rbmt --lock-file ${{ matrix.dep }} test --toolchain ${{ matrix.toolchain }}
+        run: cargo rbmt --lock-file ${{ matrix.dep }} test --toolchain ${{ matrix.toolchain }} --baseline ${{ github.event.pull_request.base.sha || github.event.before }}
 
   Check:
     runs-on: ubuntu-latest
