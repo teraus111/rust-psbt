@@ -6,16 +6,6 @@ We generally follow the contribution guidelines of [rust-bitcoin](https://github
 
 We use [`just`](https://just.systems/man/en/) for running development workflow commands. Run `just` from your shell to see the list of available commands.
 
-### Git Hooks
-
-To catch errors before running CI, we provide git hooks. To use them:
-
-```bash
-git config --local core.hooksPath githooks/
-```
-
-Alternatively, add symlinks in your `.git/hooks` directory to any of the githooks we provide.
-
 ## Integration Tests with Bitcoin Core
 
 The `bitcoind-tests/` package contains integration tests that run against real Bitcoin Core instances. A separate package is used so that bitcoind version flags don't pollute the rust-psbt crate. The package is not a member of the workspace so that it doesn't effect dependency version resolution.
