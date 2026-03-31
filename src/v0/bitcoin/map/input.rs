@@ -67,6 +67,10 @@ const PSBT_IN_TAP_BIP32_DERIVATION: u8 = 0x16;
 const PSBT_IN_TAP_INTERNAL_KEY: u8 = 0x17;
 /// Type: Taproot Merkle Root PSBT_IN_TAP_MERKLE_ROOT = 0x18
 const PSBT_IN_TAP_MERKLE_ROOT: u8 = 0x18;
+/// Type: Silent Payment Elliptic Curve Diffie-Hellman secret share PSBT_IN_SP_ECDH_SHARE = 0x1d
+const PSBT_IN_SP_ECDH_SHARE: u8 = 0x1d;
+/// Type: Silent Payment Discrete Logarithm Equality Proof PSBT_IN_SP_DLEQ = 0x1e
+const PSBT_IN_SP_DLEQ: u8 = 0x1e;
 /// Type: Proprietary Use Type PSBT_IN_PROPRIETARY = 0xFC
 const PSBT_IN_PROPRIETARY: u8 = 0xFC;
 
@@ -283,12 +287,13 @@ impl Input {
                     btree_map::Entry::Occupied(_) => return Err(Error::DuplicateKey(raw_key)),
                 }
             }
-            v if v == PSBT_IN_PREVIOUS_TXID
-                || v == PSBT_IN_OUTPUT_INDEX
-                || v == PSBT_IN_SEQUENCE
-                || v == PSBT_IN_REQUIRED_TIME_LOCKTIME
-                || v == PSBT_IN_REQUIRED_HEIGHT_LOCKTIME =>
-            {
+            v @ (PSBT_IN_PREVIOUS_TXID
+            | PSBT_IN_OUTPUT_INDEX
+            | PSBT_IN_SEQUENCE
+            | PSBT_IN_REQUIRED_TIME_LOCKTIME
+            | PSBT_IN_REQUIRED_HEIGHT_LOCKTIME
+            | PSBT_IN_SP_ECDH_SHARE
+            | PSBT_IN_SP_DLEQ) => {
                 return Err(Error::ExcludedKey { key_type_value: v });
             }
             _ => match self.unknown.entry(raw_key) {
