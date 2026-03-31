@@ -14,7 +14,7 @@
 //! > The Transaction Extractor does not need to know how to interpret scripts in order
 //! > to extract the network serialized transaction.
 //!
-//! The Extractor role does not technically require `rust-miniscript` but since a PSBT must be  
+//! The Extractor role does not technically require `rust-miniscript` but since a PSBT must be
 
 //! [BIP-174]: <https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki>
 
