@@ -12,8 +12,9 @@ edition = "2021"
 rust-version = "1.74.0"
 exclude = ["api", "tests", "contrib"]
 
-[package.metadata.rbmt]
-toolchains = { nightly = "nightly-2026-02-21", stable = "1.94.1" }
+[package.metadata.rbmt.toolchains]
+nightly = "nightly-2026-03-30"
+stable = "1.94.1"
 
 [package.metadata.rbmt.test]
 examples = [
