@@ -26,10 +26,4 @@ We use the [SPDX license list](https://spdx.org/licenses/) and [SPDX IDs](https:
 [BIP-370]: <https://github.com/bitcoin/bips/blob/master/bip-0370.mediawiki>
 
 ## Contact
-
-## Contact
-
-## Contact
-
-## Contact
 Telegram: @teraus111
